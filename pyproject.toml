@@ -1,0 +1,19 @@
+[build-system]
+requires = ["scikit-build-core==0.11.6", "pybind11==3.0.1", "pin==3.9.0", "cmeel-urdfdom==4.0.1", "cmeel-tinyxml2==10.0.0", "eiquadprog==1.3.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "libpyfairino"
+version = "0.1.0"
+description = "Local native dual-arm Fairino SDK isolation and C++ QP kinematics"
+requires-python = ">=3.12,<3.13"
+dependencies = ["pin==3.9.0", "cmeel-urdfdom==4.0.1", "cmeel-tinyxml2==10.0.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.scikit-build]
+wheel.packages = ["libpyfairino"]
+cmake.build-type = "Release"
+build.tool-args = ["-j1"]
+sdist.exclude = ["build", "dist", ".git"]

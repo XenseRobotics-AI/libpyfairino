@@ -1,0 +1,4850 @@
+{
+  "scope": "dual-arm, not completion of original full 99 declarations",
+  "declarations": [
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 11,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "RobotBase",
+      "return_type": null,
+      "parameters": "",
+      "signature": "RobotBase();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": true,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotBaseC1Ev",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        },
+        {
+          "mangled": "_ZN9RobotBaseC2Ev",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 0,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 12,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "~RobotBase",
+      "return_type": null,
+      "parameters": "",
+      "signature": "~RobotBase();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": true,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotBaseD1Ev",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        },
+        {
+          "mangled": "_ZN9RobotBaseD2Ev",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 1,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 13,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "MoveJ",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* destJointPos, double velocity, double acceleration, char errMsg[1024]",
+      "signature": "virtual ARMErrorCode MoveJ(double* destJointPos, double velocity, double acceleration, char errMsg[1024]) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 2,
+      "parameter_list": [
+        {
+          "name": "destJointPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* destJointPos"
+        },
+        {
+          "name": "velocity",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double velocity"
+        },
+        {
+          "name": "acceleration",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double acceleration"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 14,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "StopMotion",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "virtual ARMErrorCode StopMotion() = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 3,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 15,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "GetRobotMotionDone",
+      "return_type": "ARMErrorCode",
+      "parameters": "uint8_t& state",
+      "signature": "virtual ARMErrorCode GetRobotMotionDone(uint8_t& state) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 4,
+      "parameter_list": [
+        {
+          "name": "state",
+          "type_prefix": "uint8_t&",
+          "array_extents": [],
+          "default": null,
+          "raw": "uint8_t& state"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 16,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "AxisEnable",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "virtual ARMErrorCode AxisEnable(int joint_id) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 5,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 17,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "AxisDisable",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "virtual ARMErrorCode AxisDisable(int joint_id) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 6,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 18,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "AxisZeroing",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "virtual ARMErrorCode AxisZeroing(int joint_id) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 7,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 19,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "AxisResetError",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "virtual ARMErrorCode AxisResetError() = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 8,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 20,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "SetLimitPositive",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* limitPositive",
+      "signature": "virtual ARMErrorCode SetLimitPositive(double* limitPositive) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 9,
+      "parameter_list": [
+        {
+          "name": "limitPositive",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitPositive"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 21,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "SetLimitNegative",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* limitNegative",
+      "signature": "virtual ARMErrorCode SetLimitNegative(double* limitNegative) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 10,
+      "parameter_list": [
+        {
+          "name": "limitNegative",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitNegative"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 22,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "GetJointSoftLimitDeg",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* limitNegative, double* limitPositive",
+      "signature": "virtual ARMErrorCode GetJointSoftLimitDeg(double* limitNegative, double* limitPositive) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 11,
+      "parameter_list": [
+        {
+          "name": "limitNegative",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitNegative"
+        },
+        {
+          "name": "limitPositive",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitPositive"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 23,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "SetAccScale",
+      "return_type": "ARMErrorCode",
+      "parameters": "double scale",
+      "signature": "virtual ARMErrorCode SetAccScale(double scale) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 12,
+      "parameter_list": [
+        {
+          "name": "scale",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double scale"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 24,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotBase",
+      "name": "SetSpeed",
+      "return_type": "ARMErrorCode",
+      "parameters": "double speed",
+      "signature": "virtual ARMErrorCode SetSpeed(double speed) = 0;",
+      "virtual": true,
+      "pure_virtual": true,
+      "constructor": false,
+      "destructor": false,
+      "definition_status": "abstract/no definition required",
+      "abi_status": "abstract/no definition required",
+      "id": 13,
+      "parameter_list": [
+        {
+          "name": "speed",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double speed"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside phase-one dual-arm SDK and pure-DH math scope; abstract base semantics occur through concrete arms"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 49,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "SingleRobot",
+      "return_type": null,
+      "parameters": "int robotype, RobotName robotname=SingleArm, double DHCompensations[28]=nullptr",
+      "signature": "SingleRobot(int robotype, RobotName robotname=SingleArm, double DHCompensations[28]=nullptr);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": true,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobotC1EiNS_9RobotNameEPd",
+          "demangled": "SingleRobot::SingleRobot(int, SingleRobot::RobotName, double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 14,
+      "parameter_list": [
+        {
+          "name": "robotype",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int robotype"
+        },
+        {
+          "name": "robotname",
+          "type_prefix": "RobotName",
+          "array_extents": [],
+          "default": "SingleArm",
+          "raw": "RobotName robotname=SingleArm"
+        },
+        {
+          "name": "DHCompensations",
+          "type_prefix": "double",
+          "array_extents": [
+            "28"
+          ],
+          "default": "nullptr",
+          "raw": "double DHCompensations[28]=nullptr"
+        }
+      ],
+      "related_types": [
+        "RobotName"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Session explicit connect/close lifecycle"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 53,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "~SingleRobot",
+      "return_type": null,
+      "parameters": "",
+      "signature": "~SingleRobot();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": true,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobotD1Ev",
+          "demangled": "SingleRobot::~SingleRobot()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 15,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Session explicit connect/close lifecycle"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 64,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "MoveJ",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* destJointPos, double velocity, double acceleration, char errMsg[1024]",
+      "signature": "ARMErrorCode MoveJ(double* destJointPos, double velocity, double acceleration, char errMsg[1024]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot5MoveJEPdddPc",
+          "demangled": "SingleRobot::MoveJ(double*, double, double, char*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 16,
+      "parameter_list": [
+        {
+          "name": "destJointPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* destJointPos"
+        },
+        {
+          "name": "velocity",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double velocity"
+        },
+        {
+          "name": "acceleration",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double acceleration"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.MoveJ via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 74,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "MoveP",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* destCartPos, double destArmAngle, double velocity, double acceleration, char errMsg[1024]",
+      "signature": "ARMErrorCode MoveP(double* destCartPos, double destArmAngle, double velocity, double acceleration, char errMsg[1024]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot5MovePEPddddPc",
+          "demangled": "SingleRobot::MoveP(double*, double, double, double, char*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 17,
+      "parameter_list": [
+        {
+          "name": "destCartPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* destCartPos"
+        },
+        {
+          "name": "destArmAngle",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double destArmAngle"
+        },
+        {
+          "name": "velocity",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double velocity"
+        },
+        {
+          "name": "acceleration",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double acceleration"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.MoveP via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 84,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "MoveL",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* destCartPos, double destArmAngle, double velocity, double acceleration, char errMsg[1024]",
+      "signature": "ARMErrorCode MoveL(double* destCartPos, double destArmAngle, double velocity, double acceleration, char errMsg[1024]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot5MoveLEPddddPc",
+          "demangled": "SingleRobot::MoveL(double*, double, double, double, char*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 18,
+      "parameter_list": [
+        {
+          "name": "destCartPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* destCartPos"
+        },
+        {
+          "name": "destArmAngle",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double destArmAngle"
+        },
+        {
+          "name": "velocity",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double velocity"
+        },
+        {
+          "name": "acceleration",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double acceleration"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.MoveL via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 96,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "MoveC",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* midCartPos, double midArmAngle, double* destCartPos, double destArmAngle, double velocity, double acceleration, char errMsg[1024]",
+      "signature": "ARMErrorCode MoveC(double* midCartPos, double midArmAngle, double* destCartPos, double destArmAngle, double velocity, double acceleration, char errMsg[1024]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot5MoveCEPddS0_dddPc",
+          "demangled": "SingleRobot::MoveC(double*, double, double*, double, double, double, char*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 19,
+      "parameter_list": [
+        {
+          "name": "midCartPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* midCartPos"
+        },
+        {
+          "name": "midArmAngle",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double midArmAngle"
+        },
+        {
+          "name": "destCartPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* destCartPos"
+        },
+        {
+          "name": "destArmAngle",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double destArmAngle"
+        },
+        {
+          "name": "velocity",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double velocity"
+        },
+        {
+          "name": "acceleration",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double acceleration"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.MoveC via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 104,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "ServoCart",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* servo_cartPos, uint32_t len, char errMsg[1024]",
+      "signature": "ARMErrorCode ServoCart(double* servo_cartPos, uint32_t len, char errMsg[1024]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot9ServoCartEPdjPc",
+          "demangled": "SingleRobot::ServoCart(double*, unsigned int, char*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 20,
+      "parameter_list": [
+        {
+          "name": "servo_cartPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* servo_cartPos"
+        },
+        {
+          "name": "len",
+          "type_prefix": "uint32_t",
+          "array_extents": [],
+          "default": null,
+          "raw": "uint32_t len"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.ServoCart via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 109,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "ServoMoveStart",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "ARMErrorCode ServoMoveStart();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot14ServoMoveStartEv",
+          "demangled": "SingleRobot::ServoMoveStart()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 21,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.ServoMoveStart via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 114,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "ServoMoveEnd",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "ARMErrorCode ServoMoveEnd();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot12ServoMoveEndEv",
+          "demangled": "SingleRobot::ServoMoveEnd()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 22,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.ServoMoveEnd via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 122,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "ServoJ",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* jointPos, int period, char errMsg[1024]",
+      "signature": "ARMErrorCode ServoJ(double* jointPos, int period, char errMsg[1024]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot6ServoJEPdiPc",
+          "demangled": "SingleRobot::ServoJ(double*, int, char*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 23,
+      "parameter_list": [
+        {
+          "name": "jointPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* jointPos"
+        },
+        {
+          "name": "period",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int period"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.ServoJ via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 127,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "StopMotion",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "ARMErrorCode StopMotion();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot10StopMotionEv",
+          "demangled": "SingleRobot::StopMotion()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 24,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.StopMotion via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 137,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "SetToolCorrd",
+      "return_type": "ARMErrorCode",
+      "parameters": "int toolNum, double* corrd",
+      "signature": "ARMErrorCode SetToolCorrd(int toolNum, double* corrd);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot12SetToolCorrdEiPd",
+          "demangled": "SingleRobot::SetToolCorrd(int, double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 25,
+      "parameter_list": [
+        {
+          "name": "toolNum",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int toolNum"
+        },
+        {
+          "name": "corrd",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* corrd"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.SetToolCorrd via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 143,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "SetAccScale",
+      "return_type": "ARMErrorCode",
+      "parameters": "double scale",
+      "signature": "ARMErrorCode SetAccScale(double scale);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot11SetAccScaleEd",
+          "demangled": "SingleRobot::SetAccScale(double)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 26,
+      "parameter_list": [
+        {
+          "name": "scale",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double scale"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.SetAccScale via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 149,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "SetSpeed",
+      "return_type": "ARMErrorCode",
+      "parameters": "double speed",
+      "signature": "ARMErrorCode SetSpeed(double speed);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot8SetSpeedEd",
+          "demangled": "SingleRobot::SetSpeed(double)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 27,
+      "parameter_list": [
+        {
+          "name": "speed",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double speed"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.SetSpeed via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 157,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetForwardKin",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* joint_val, double* desc_pos, double& arm_angle",
+      "signature": "ARMErrorCode GetForwardKin(double* joint_val, double* desc_pos, double& arm_angle);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot13GetForwardKinEPdS0_Rd",
+          "demangled": "SingleRobot::GetForwardKin(double*, double*, double&)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 28,
+      "parameter_list": [
+        {
+          "name": "joint_val",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* joint_val"
+        },
+        {
+          "name": "desc_pos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* desc_pos"
+        },
+        {
+          "name": "arm_angle",
+          "type_prefix": "double&",
+          "array_extents": [],
+          "default": null,
+          "raw": "double& arm_angle"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetForwardKin via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 165,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetInverseKin",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* desc_pos, double arm_angle, double* joint_val",
+      "signature": "ARMErrorCode GetInverseKin(double* desc_pos, double arm_angle, double* joint_val);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot13GetInverseKinEPddS0_",
+          "demangled": "SingleRobot::GetInverseKin(double*, double, double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 29,
+      "parameter_list": [
+        {
+          "name": "desc_pos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* desc_pos"
+        },
+        {
+          "name": "arm_angle",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double arm_angle"
+        },
+        {
+          "name": "joint_val",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* joint_val"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetInverseKin via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 174,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetInverseKinRef",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* desc_pos, double arm_angle, double* ref_joint_val, double* joint_val",
+      "signature": "ARMErrorCode GetInverseKinRef(double* desc_pos, double arm_angle, double* ref_joint_val, double* joint_val);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot16GetInverseKinRefEPddS0_S0_",
+          "demangled": "SingleRobot::GetInverseKinRef(double*, double, double*, double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 30,
+      "parameter_list": [
+        {
+          "name": "desc_pos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* desc_pos"
+        },
+        {
+          "name": "arm_angle",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double arm_angle"
+        },
+        {
+          "name": "ref_joint_val",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* ref_joint_val"
+        },
+        {
+          "name": "joint_val",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* joint_val"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetInverseKinRef via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 180,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetActualJointPosDegree",
+      "return_type": "ARMErrorCode",
+      "parameters": "double joint_pos[7]",
+      "signature": "ARMErrorCode GetActualJointPosDegree(double joint_pos[7]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot23GetActualJointPosDegreeEPd",
+          "demangled": "SingleRobot::GetActualJointPosDegree(double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 31,
+      "parameter_list": [
+        {
+          "name": "joint_pos",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double joint_pos[7]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetActualJointPosDegree via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 186,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetRobotMotionDone",
+      "return_type": "ARMErrorCode",
+      "parameters": "uint8_t& state",
+      "signature": "ARMErrorCode GetRobotMotionDone(uint8_t& state);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot18GetRobotMotionDoneERh",
+          "demangled": "SingleRobot::GetRobotMotionDone(unsigned char&)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 32,
+      "parameter_list": [
+        {
+          "name": "state",
+          "type_prefix": "uint8_t&",
+          "array_extents": [],
+          "default": null,
+          "raw": "uint8_t& state"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetRobotMotionDone via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 192,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetEEVel",
+      "return_type": "ARMErrorCode",
+      "parameters": "double eeVal[6]",
+      "signature": "ARMErrorCode GetEEVel(double eeVal[6]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot8GetEEVelEPd",
+          "demangled": "SingleRobot::GetEEVel(double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 33,
+      "parameter_list": [
+        {
+          "name": "eeVal",
+          "type_prefix": "double",
+          "array_extents": [
+            "6"
+          ],
+          "default": null,
+          "raw": "double eeVal[6]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetEEVel via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 198,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "AxisEnable",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "ARMErrorCode AxisEnable(int joint_id);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot10AxisEnableEi",
+          "demangled": "SingleRobot::AxisEnable(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 34,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.AxisEnable via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 204,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "AxisDisable",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "ARMErrorCode AxisDisable(int joint_id);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot11AxisDisableEi",
+          "demangled": "SingleRobot::AxisDisable(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 35,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.AxisDisable via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 210,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "AxisZeroing",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "ARMErrorCode AxisZeroing(int joint_id);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot11AxisZeroingEi",
+          "demangled": "SingleRobot::AxisZeroing(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 36,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.AxisZeroing via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 215,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "AxisResetError",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "ARMErrorCode AxisResetError();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot14AxisResetErrorEv",
+          "demangled": "SingleRobot::AxisResetError()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 37,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.AxisResetError via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 222,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetActualToolFlangePose",
+      "return_type": "ARMErrorCode",
+      "parameters": "double jointPos[7], double fLangePos[7]",
+      "signature": "ARMErrorCode GetActualToolFlangePose(double jointPos[7], double fLangePos[7]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot23GetActualToolFlangePoseEPdS0_",
+          "demangled": "SingleRobot::GetActualToolFlangePose(double*, double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 38,
+      "parameter_list": [
+        {
+          "name": "jointPos",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double jointPos[7]"
+        },
+        {
+          "name": "fLangePos",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double fLangePos[7]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetActualToolFlangePose via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 228,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "SetLimitPositive",
+      "return_type": "ARMErrorCode",
+      "parameters": "double limitPositive[7]",
+      "signature": "ARMErrorCode SetLimitPositive(double limitPositive[7]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot16SetLimitPositiveEPd",
+          "demangled": "SingleRobot::SetLimitPositive(double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 39,
+      "parameter_list": [
+        {
+          "name": "limitPositive",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double limitPositive[7]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.SetLimitPositive via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 234,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "SetLimitNegative",
+      "return_type": "ARMErrorCode",
+      "parameters": "double limitNegative[7]",
+      "signature": "ARMErrorCode SetLimitNegative(double limitNegative[7]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot16SetLimitNegativeEPd",
+          "demangled": "SingleRobot::SetLimitNegative(double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 40,
+      "parameter_list": [
+        {
+          "name": "limitNegative",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double limitNegative[7]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.SetLimitNegative via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 241,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "SingleRobot",
+      "name": "GetJointSoftLimitDeg",
+      "return_type": "ARMErrorCode",
+      "parameters": "double limitNegative[7], double limitPositive[7]",
+      "signature": "ARMErrorCode GetJointSoftLimitDeg(double limitNegative[7], double limitPositive[7]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN11SingleRobot20GetJointSoftLimitDegEPdS0_",
+          "demangled": "SingleRobot::GetJointSoftLimitDeg(double*, double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 41,
+      "parameter_list": [
+        {
+          "name": "limitNegative",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double limitNegative[7]"
+        },
+        {
+          "name": "limitPositive",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double limitPositive[7]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "Arm.GetJointSoftLimitDeg via isolated real SDK backend; runtime requires confirmed configuration"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 266,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "RobotWaist",
+      "return_type": null,
+      "parameters": "",
+      "signature": "RobotWaist();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": true,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaistC1Ev",
+          "demangled": "RobotWaist::RobotWaist()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 42,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 270,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "~RobotWaist",
+      "return_type": null,
+      "parameters": "",
+      "signature": "~RobotWaist();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": true,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaistD1Ev",
+          "demangled": "RobotWaist::~RobotWaist()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 43,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 280,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "MoveJ",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* destJointPos, double velocity, double acceleration, char errMsg[1024]",
+      "signature": "ARMErrorCode MoveJ(double* destJointPos, double velocity, double acceleration, char errMsg[1024]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist5MoveJEPdddPc",
+          "demangled": "RobotWaist::MoveJ(double*, double, double, char*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 44,
+      "parameter_list": [
+        {
+          "name": "destJointPos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* destJointPos"
+        },
+        {
+          "name": "velocity",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double velocity"
+        },
+        {
+          "name": "acceleration",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double acceleration"
+        },
+        {
+          "name": "errMsg",
+          "type_prefix": "char",
+          "array_extents": [
+            "1024"
+          ],
+          "default": null,
+          "raw": "char errMsg[1024]"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 285,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "StopMotion",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "ARMErrorCode StopMotion();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist10StopMotionEv",
+          "demangled": "RobotWaist::StopMotion()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 45,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 291,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "GetActualJointPosDegree",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* joint_pos",
+      "signature": "ARMErrorCode GetActualJointPosDegree(double* joint_pos);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist23GetActualJointPosDegreeEPd",
+          "demangled": "RobotWaist::GetActualJointPosDegree(double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 46,
+      "parameter_list": [
+        {
+          "name": "joint_pos",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* joint_pos"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 297,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "GetRobotMotionDone",
+      "return_type": "ARMErrorCode",
+      "parameters": "uint8_t& state",
+      "signature": "ARMErrorCode GetRobotMotionDone(uint8_t& state);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist18GetRobotMotionDoneERh",
+          "demangled": "RobotWaist::GetRobotMotionDone(unsigned char&)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 47,
+      "parameter_list": [
+        {
+          "name": "state",
+          "type_prefix": "uint8_t&",
+          "array_extents": [],
+          "default": null,
+          "raw": "uint8_t& state"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 303,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "AxisEnable",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "ARMErrorCode AxisEnable(int joint_id);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist10AxisEnableEi",
+          "demangled": "RobotWaist::AxisEnable(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 48,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 309,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "AxisDisable",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "ARMErrorCode AxisDisable(int joint_id);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist11AxisDisableEi",
+          "demangled": "RobotWaist::AxisDisable(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 49,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 315,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "AxisZeroing",
+      "return_type": "ARMErrorCode",
+      "parameters": "int joint_id",
+      "signature": "ARMErrorCode AxisZeroing(int joint_id);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist11AxisZeroingEi",
+          "demangled": "RobotWaist::AxisZeroing(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 50,
+      "parameter_list": [
+        {
+          "name": "joint_id",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int joint_id"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 320,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "AxisResetError",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "ARMErrorCode AxisResetError();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist14AxisResetErrorEv",
+          "demangled": "RobotWaist::AxisResetError()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 51,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 326,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "SetLimitPositive",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* limitPositive",
+      "signature": "ARMErrorCode SetLimitPositive(double* limitPositive);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist16SetLimitPositiveEPd",
+          "demangled": "RobotWaist::SetLimitPositive(double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 52,
+      "parameter_list": [
+        {
+          "name": "limitPositive",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitPositive"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 332,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "SetLimitNegative",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* limitNegative",
+      "signature": "ARMErrorCode SetLimitNegative(double* limitNegative);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist16SetLimitNegativeEPd",
+          "demangled": "RobotWaist::SetLimitNegative(double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 53,
+      "parameter_list": [
+        {
+          "name": "limitNegative",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitNegative"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 339,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "GetJointSoftLimitDeg",
+      "return_type": "ARMErrorCode",
+      "parameters": "double* limitNegative, double* limitPositive",
+      "signature": "ARMErrorCode GetJointSoftLimitDeg(double* limitNegative, double* limitPositive);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist20GetJointSoftLimitDegEPdS0_",
+          "demangled": "RobotWaist::GetJointSoftLimitDeg(double*, double*)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 54,
+      "parameter_list": [
+        {
+          "name": "limitNegative",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitNegative"
+        },
+        {
+          "name": "limitPositive",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* limitPositive"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 345,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "SetAccScale",
+      "return_type": "ARMErrorCode",
+      "parameters": "double scale",
+      "signature": "ARMErrorCode SetAccScale(double scale);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist11SetAccScaleEd",
+          "demangled": "RobotWaist::SetAccScale(double)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 55,
+      "parameter_list": [
+        {
+          "name": "scale",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double scale"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 351,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotWaist",
+      "name": "SetSpeed",
+      "return_type": "ARMErrorCode",
+      "parameters": "double speed",
+      "signature": "ARMErrorCode SetSpeed(double speed);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN10RobotWaist8SetSpeedEd",
+          "demangled": "RobotWaist::SetSpeed(double)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 56,
+      "parameter_list": [
+        {
+          "name": "speed",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double speed"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 372,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotTool",
+      "name": "RobotTool",
+      "return_type": null,
+      "parameters": "",
+      "signature": "RobotTool();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": true,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotToolC1Ev",
+          "demangled": "RobotTool::RobotTool()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 57,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 376,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotTool",
+      "name": "~RobotTool",
+      "return_type": null,
+      "parameters": "",
+      "signature": "~RobotTool();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": true,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotToolD1Ev",
+          "demangled": "RobotTool::~RobotTool()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 58,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 383,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotTool",
+      "name": "RobotFrConfig",
+      "return_type": "ARMErrorCode",
+      "parameters": "int mode",
+      "signature": "ARMErrorCode RobotFrConfig(int mode);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotTool13RobotFrConfigEi",
+          "demangled": "RobotTool::RobotFrConfig(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 59,
+      "parameter_list": [
+        {
+          "name": "mode",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int mode"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 388,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotTool",
+      "name": "RobotPackLog",
+      "return_type": "ARMErrorCode",
+      "parameters": "",
+      "signature": "ARMErrorCode RobotPackLog();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotTool12RobotPackLogEv",
+          "demangled": "RobotTool::RobotPackLog()",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 60,
+      "parameter_list": [],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 394,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotTool",
+      "name": "RobotRecordData",
+      "return_type": "ARMErrorCode",
+      "parameters": "int state",
+      "signature": "ARMErrorCode RobotRecordData(int state);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotTool15RobotRecordDataEi",
+          "demangled": "RobotTool::RobotRecordData(int)",
+          "defined_in": [
+            "SDK/lib/libhumanorid_sdk.so.3.0.0"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 61,
+      "parameter_list": [
+        {
+          "name": "state",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int state"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 400,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotTool",
+      "name": "UpdateRos2Plugin",
+      "return_type": "ARMErrorCode",
+      "parameters": "std::string filepath",
+      "signature": "ARMErrorCode UpdateRos2Plugin(std::string filepath);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotTool16UpdateRos2PluginENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE",
+          "demangled": "RobotTool::UpdateRos2Plugin(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)",
+          "defined_in": []
+        }
+      ],
+      "definition_status": "missing",
+      "abi_status": "missing",
+      "id": 62,
+      "parameter_list": [
+        {
+          "name": "filepath",
+          "type_prefix": "std::string",
+          "array_extents": [],
+          "default": null,
+          "raw": "std::string filepath"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode",
+        "std::string"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "official RobotTool member definition absent; no callable placeholder"
+    },
+    {
+      "header": "SDK/include/humanorid_sdk.h",
+      "line": 406,
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "owner": "RobotTool",
+      "name": "UpdateSDKServer",
+      "return_type": "ARMErrorCode",
+      "parameters": "std::string filepath",
+      "signature": "ARMErrorCode UpdateSDKServer(std::string filepath);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN9RobotTool15UpdateSDKServerENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE",
+          "demangled": "RobotTool::UpdateSDKServer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)",
+          "defined_in": []
+        }
+      ],
+      "definition_status": "missing",
+      "abi_status": "missing",
+      "id": 63,
+      "parameter_list": [
+        {
+          "name": "filepath",
+          "type_prefix": "std::string",
+          "array_extents": [],
+          "default": null,
+          "raw": "std::string filepath"
+        }
+      ],
+      "related_types": [
+        "ARMErrorCode",
+        "std::string"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "official RobotTool member definition absent; no callable placeholder"
+    },
+    {
+      "header": "SDK/include/kinematic_lib/frmcKinematic.h",
+      "line": 41,
+      "sha256": "1727a57d9d59fede2b68ea3a86cd03a176e9d9bf84b2ee025d851124beadbd0b",
+      "owner": null,
+      "name": "forwardKinematic",
+      "return_type": "int",
+      "parameters": "DHParam dh, DHCMPSTPARAM DHcmpst, double q[7], int jnt_index, double trans[4][4], double* armAngle",
+      "signature": "int forwardKinematic(DHParam dh, DHCMPSTPARAM DHcmpst, double q[7], int jnt_index, double trans[4][4], double* armAngle);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "forwardKinematic",
+          "demangled": "forwardKinematic",
+          "defined_in": [
+            "SDK/lib/libkine_FR_7Axis.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 64,
+      "parameter_list": [
+        {
+          "name": "dh",
+          "type_prefix": "DHParam",
+          "array_extents": [],
+          "default": null,
+          "raw": "DHParam dh"
+        },
+        {
+          "name": "DHcmpst",
+          "type_prefix": "DHCMPSTPARAM",
+          "array_extents": [],
+          "default": null,
+          "raw": "DHCMPSTPARAM DHcmpst"
+        },
+        {
+          "name": "q",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double q[7]"
+        },
+        {
+          "name": "jnt_index",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int jnt_index"
+        },
+        {
+          "name": "trans",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double trans[4][4]"
+        },
+        {
+          "name": "armAngle",
+          "type_prefix": "double*",
+          "array_extents": [],
+          "default": null,
+          "raw": "double* armAngle"
+        }
+      ],
+      "related_types": [
+        "DHCMPSTPARAM",
+        "DHParam"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "sdk_math.forwardKinematic binds the official explicit-DH mathematical library"
+    },
+    {
+      "header": "SDK/include/kinematic_lib/frmcKinematic.h",
+      "line": 44,
+      "sha256": "1727a57d9d59fede2b68ea3a86cd03a176e9d9bf84b2ee025d851124beadbd0b",
+      "owner": null,
+      "name": "inverseKinematic",
+      "return_type": "int",
+      "parameters": "DHParam dh, DHCMPSTPARAM DHcmpst,JOINTLIMIT jointLim,int jnt_index,double armAngle, double trans[4][4], double q_ref[7], double q_out[7], double q_allout[16][7]",
+      "signature": "int inverseKinematic(DHParam dh, DHCMPSTPARAM DHcmpst,JOINTLIMIT jointLim,int jnt_index,double armAngle, double trans[4][4], double q_ref[7], double q_out[7], double q_allout[16][7]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "inverseKinematic",
+          "demangled": "inverseKinematic",
+          "defined_in": [
+            "SDK/lib/libkine_FR_7Axis.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 65,
+      "parameter_list": [
+        {
+          "name": "dh",
+          "type_prefix": "DHParam",
+          "array_extents": [],
+          "default": null,
+          "raw": "DHParam dh"
+        },
+        {
+          "name": "DHcmpst",
+          "type_prefix": "DHCMPSTPARAM",
+          "array_extents": [],
+          "default": null,
+          "raw": "DHCMPSTPARAM DHcmpst"
+        },
+        {
+          "name": "jointLim",
+          "type_prefix": "JOINTLIMIT",
+          "array_extents": [],
+          "default": null,
+          "raw": "JOINTLIMIT jointLim"
+        },
+        {
+          "name": "jnt_index",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int jnt_index"
+        },
+        {
+          "name": "armAngle",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double armAngle"
+        },
+        {
+          "name": "trans",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double trans[4][4]"
+        },
+        {
+          "name": "q_ref",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double q_ref[7]"
+        },
+        {
+          "name": "q_out",
+          "type_prefix": "double",
+          "array_extents": [
+            "7"
+          ],
+          "default": null,
+          "raw": "double q_out[7]"
+        },
+        {
+          "name": "q_allout",
+          "type_prefix": "double",
+          "array_extents": [
+            "16",
+            "7"
+          ],
+          "default": null,
+          "raw": "double q_allout[16][7]"
+        }
+      ],
+      "related_types": [
+        "DHCMPSTPARAM",
+        "DHParam",
+        "JOINTLIMIT"
+      ],
+      "phase_one_status": "supported",
+      "phase_one_reason": "sdk_math.inverseKinematic binds the official explicit-DH mathematical library"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 15,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "FR_struct_converse",
+      "return_type": null,
+      "parameters": "",
+      "signature": "FR_struct_converse();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": true,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converseC1Ev",
+          "demangled": "FR_struct_converse::FR_struct_converse()",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 66,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 16,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "~FR_struct_converse",
+      "return_type": null,
+      "parameters": "",
+      "signature": "~FR_struct_converse();",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": true,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converseD1Ev",
+          "demangled": "FR_struct_converse::~FR_struct_converse()",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 67,
+      "parameter_list": [],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 18,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "TRSF2Eigen",
+      "return_type": "void",
+      "parameters": "TRSF mat, Matrix4d& eigen_mat",
+      "signature": "void TRSF2Eigen(TRSF mat, Matrix4d& eigen_mat);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10TRSF2EigenE5_TRSFRN5Eigen6MatrixIdLi4ELi4ELi0ELi4ELi4EEE",
+          "demangled": "FR_struct_converse::TRSF2Eigen(_TRSF, Eigen::Matrix<double, 4, 4, 0, 4, 4>&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 68,
+      "parameter_list": [
+        {
+          "name": "mat",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF mat"
+        },
+        {
+          "name": "eigen_mat",
+          "type_prefix": "Matrix4d&",
+          "array_extents": [],
+          "default": null,
+          "raw": "Matrix4d& eigen_mat"
+        }
+      ],
+      "related_types": [
+        "Matrix4d",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 19,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Eigen2TRSF",
+      "return_type": "void",
+      "parameters": "Matrix4d& mat, TRSF& fr_mat",
+      "signature": "void Eigen2TRSF(Matrix4d& mat, TRSF& fr_mat);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10Eigen2TRSFERN5Eigen6MatrixIdLi4ELi4ELi0ELi4ELi4EEER5_TRSF",
+          "demangled": "FR_struct_converse::Eigen2TRSF(Eigen::Matrix<double, 4, 4, 0, 4, 4>&, _TRSF&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 69,
+      "parameter_list": [
+        {
+          "name": "mat",
+          "type_prefix": "Matrix4d&",
+          "array_extents": [],
+          "default": null,
+          "raw": "Matrix4d& mat"
+        },
+        {
+          "name": "fr_mat",
+          "type_prefix": "TRSF&",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF& fr_mat"
+        }
+      ],
+      "related_types": [
+        "Matrix4d",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 21,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Double2TRSF",
+      "return_type": "void",
+      "parameters": "double mat[4][4],TRSF& fr_mat",
+      "signature": "void Double2TRSF(double mat[4][4],TRSF& fr_mat);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse11Double2TRSFEPA4_dR5_TRSF",
+          "demangled": "FR_struct_converse::Double2TRSF(double (*) [4], _TRSF&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 70,
+      "parameter_list": [
+        {
+          "name": "mat",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double mat[4][4]"
+        },
+        {
+          "name": "fr_mat",
+          "type_prefix": "TRSF&",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF& fr_mat"
+        }
+      ],
+      "related_types": [
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 22,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "TRSF2Double",
+      "return_type": "void",
+      "parameters": "TRSF mat, double fr_mat[4][4]",
+      "signature": "void TRSF2Double(TRSF mat, double fr_mat[4][4]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse11TRSF2DoubleE5_TRSFPA4_d",
+          "demangled": "FR_struct_converse::TRSF2Double(_TRSF, double (*) [4])",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 71,
+      "parameter_list": [
+        {
+          "name": "mat",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF mat"
+        },
+        {
+          "name": "fr_mat",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double fr_mat[4][4]"
+        }
+      ],
+      "related_types": [
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 23,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Double2Eigen",
+      "return_type": "void",
+      "parameters": "double mat[4][4],Matrix4d& eigen_mat",
+      "signature": "void Double2Eigen(double mat[4][4],Matrix4d& eigen_mat);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse12Double2EigenEPA4_dRN5Eigen6MatrixIdLi4ELi4ELi0ELi4ELi4EEE",
+          "demangled": "FR_struct_converse::Double2Eigen(double (*) [4], Eigen::Matrix<double, 4, 4, 0, 4, 4>&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 72,
+      "parameter_list": [
+        {
+          "name": "mat",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double mat[4][4]"
+        },
+        {
+          "name": "eigen_mat",
+          "type_prefix": "Matrix4d&",
+          "array_extents": [],
+          "default": null,
+          "raw": "Matrix4d& eigen_mat"
+        }
+      ],
+      "related_types": [
+        "Matrix4d"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 24,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Eigen2Double",
+      "return_type": "void",
+      "parameters": "Matrix4d& eigen_mat,double mat[4][4]",
+      "signature": "void Eigen2Double(Matrix4d& eigen_mat,double mat[4][4]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse12Eigen2DoubleERN5Eigen6MatrixIdLi4ELi4ELi0ELi4ELi4EEEPA4_d",
+          "demangled": "FR_struct_converse::Eigen2Double(Eigen::Matrix<double, 4, 4, 0, 4, 4>&, double (*) [4])",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 73,
+      "parameter_list": [
+        {
+          "name": "eigen_mat",
+          "type_prefix": "Matrix4d&",
+          "array_extents": [],
+          "default": null,
+          "raw": "Matrix4d& eigen_mat"
+        },
+        {
+          "name": "mat",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double mat[4][4]"
+        }
+      ],
+      "related_types": [
+        "Matrix4d"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 26,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Double2TRSF",
+      "return_type": "TRSF",
+      "parameters": "double mat[4][4]",
+      "signature": "TRSF Double2TRSF(double mat[4][4]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse11Double2TRSFEPA4_d",
+          "demangled": "FR_struct_converse::Double2TRSF(double (*) [4])",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 74,
+      "parameter_list": [
+        {
+          "name": "mat",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double mat[4][4]"
+        }
+      ],
+      "related_types": [
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 28,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "JNTS2Eigen",
+      "return_type": "void",
+      "parameters": "JNTS jnt, VectorXd& eigen_jnt",
+      "signature": "void JNTS2Eigen(JNTS jnt, VectorXd& eigen_jnt);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10JNTS2EigenE5_JNTSRN5Eigen6MatrixIdLin1ELi1ELi0ELin1ELi1EEE",
+          "demangled": "FR_struct_converse::JNTS2Eigen(_JNTS, Eigen::Matrix<double, -1, 1, 0, -1, 1>&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 75,
+      "parameter_list": [
+        {
+          "name": "jnt",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS jnt"
+        },
+        {
+          "name": "eigen_jnt",
+          "type_prefix": "VectorXd&",
+          "array_extents": [],
+          "default": null,
+          "raw": "VectorXd& eigen_jnt"
+        }
+      ],
+      "related_types": [
+        "JNTS",
+        "VectorXd"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 29,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Eigen2JNTS",
+      "return_type": "void",
+      "parameters": "VectorXd eigen_jnt, JNTS& jnt",
+      "signature": "void Eigen2JNTS(VectorXd eigen_jnt, JNTS& jnt);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10Eigen2JNTSEN5Eigen6MatrixIdLin1ELi1ELi0ELin1ELi1EEER5_JNTS",
+          "demangled": "FR_struct_converse::Eigen2JNTS(Eigen::Matrix<double, -1, 1, 0, -1, 1>, _JNTS&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 76,
+      "parameter_list": [
+        {
+          "name": "eigen_jnt",
+          "type_prefix": "VectorXd",
+          "array_extents": [],
+          "default": null,
+          "raw": "VectorXd eigen_jnt"
+        },
+        {
+          "name": "jnt",
+          "type_prefix": "JNTS&",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS& jnt"
+        }
+      ],
+      "related_types": [
+        "JNTS",
+        "VectorXd"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 30,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "JNTS2Eigen",
+      "return_type": "void",
+      "parameters": "JNTS jnt, ArrayXd& eigen_jnt",
+      "signature": "void JNTS2Eigen(JNTS jnt, ArrayXd& eigen_jnt);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10JNTS2EigenE5_JNTSRN5Eigen5ArrayIdLin1ELi1ELi0ELin1ELi1EEE",
+          "demangled": "FR_struct_converse::JNTS2Eigen(_JNTS, Eigen::Array<double, -1, 1, 0, -1, 1>&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 77,
+      "parameter_list": [
+        {
+          "name": "jnt",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS jnt"
+        },
+        {
+          "name": "eigen_jnt",
+          "type_prefix": "ArrayXd&",
+          "array_extents": [],
+          "default": null,
+          "raw": "ArrayXd& eigen_jnt"
+        }
+      ],
+      "related_types": [
+        "ArrayXd",
+        "JNTS"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 31,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Eigen2JNTS",
+      "return_type": "void",
+      "parameters": "ArrayXd eigen_jnt, JNTS& jnt",
+      "signature": "void Eigen2JNTS(ArrayXd eigen_jnt, JNTS& jnt);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10Eigen2JNTSEN5Eigen5ArrayIdLin1ELi1ELi0ELin1ELi1EEER5_JNTS",
+          "demangled": "FR_struct_converse::Eigen2JNTS(Eigen::Array<double, -1, 1, 0, -1, 1>, _JNTS&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 78,
+      "parameter_list": [
+        {
+          "name": "eigen_jnt",
+          "type_prefix": "ArrayXd",
+          "array_extents": [],
+          "default": null,
+          "raw": "ArrayXd eigen_jnt"
+        },
+        {
+          "name": "jnt",
+          "type_prefix": "JNTS&",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS& jnt"
+        }
+      ],
+      "related_types": [
+        "ArrayXd",
+        "JNTS"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 33,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "VECT2Eigen",
+      "return_type": "void",
+      "parameters": "VECT vec,Vector3d& eigen_vec",
+      "signature": "void VECT2Eigen(VECT vec,Vector3d& eigen_vec);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10VECT2EigenE5_VECTRN5Eigen6MatrixIdLi3ELi1ELi0ELi3ELi1EEE",
+          "demangled": "FR_struct_converse::VECT2Eigen(_VECT, Eigen::Matrix<double, 3, 1, 0, 3, 1>&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 79,
+      "parameter_list": [
+        {
+          "name": "vec",
+          "type_prefix": "VECT",
+          "array_extents": [],
+          "default": null,
+          "raw": "VECT vec"
+        },
+        {
+          "name": "eigen_vec",
+          "type_prefix": "Vector3d&",
+          "array_extents": [],
+          "default": null,
+          "raw": "Vector3d& eigen_vec"
+        }
+      ],
+      "related_types": [
+        "VECT",
+        "Vector3d"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 34,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Eigen2VECT",
+      "return_type": "void",
+      "parameters": "Vector3d eigen_vec, VECT& vec",
+      "signature": "void Eigen2VECT(Vector3d eigen_vec, VECT& vec);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse10Eigen2VECTEN5Eigen6MatrixIdLi3ELi1ELi0ELi3ELi1EEER5_VECT",
+          "demangled": "FR_struct_converse::Eigen2VECT(Eigen::Matrix<double, 3, 1, 0, 3, 1>, _VECT&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 80,
+      "parameter_list": [
+        {
+          "name": "eigen_vec",
+          "type_prefix": "Vector3d",
+          "array_extents": [],
+          "default": null,
+          "raw": "Vector3d eigen_vec"
+        },
+        {
+          "name": "vec",
+          "type_prefix": "VECT&",
+          "array_extents": [],
+          "default": null,
+          "raw": "VECT& vec"
+        }
+      ],
+      "related_types": [
+        "VECT",
+        "Vector3d"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 36,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "JNTS2Double",
+      "return_type": "void",
+      "parameters": "JNTS jnt, double q[NUM_JNTS]",
+      "signature": "void JNTS2Double(JNTS jnt, double q[NUM_JNTS]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse11JNTS2DoubleE5_JNTSPd",
+          "demangled": "FR_struct_converse::JNTS2Double(_JNTS, double*)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 81,
+      "parameter_list": [
+        {
+          "name": "jnt",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS jnt"
+        },
+        {
+          "name": "q",
+          "type_prefix": "double",
+          "array_extents": [
+            "NUM_JNTS"
+          ],
+          "default": null,
+          "raw": "double q[NUM_JNTS]"
+        }
+      ],
+      "related_types": [
+        "JNTS"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 37,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "Double2JNTS",
+      "return_type": "void",
+      "parameters": "double q[NUM_JNTS], JNTS& jnt",
+      "signature": "void Double2JNTS(double q[NUM_JNTS], JNTS& jnt);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse11Double2JNTSEPdR5_JNTS",
+          "demangled": "FR_struct_converse::Double2JNTS(double*, _JNTS&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 82,
+      "parameter_list": [
+        {
+          "name": "q",
+          "type_prefix": "double",
+          "array_extents": [
+            "NUM_JNTS"
+          ],
+          "default": null,
+          "raw": "double q[NUM_JNTS]"
+        },
+        {
+          "name": "jnt",
+          "type_prefix": "JNTS&",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS& jnt"
+        }
+      ],
+      "related_types": [
+        "JNTS"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 39,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "rpy2doublemat",
+      "return_type": "void",
+      "parameters": "double rpy[3],double mat[4][4]",
+      "signature": "void rpy2doublemat(double rpy[3],double mat[4][4]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse13rpy2doublematEPdPA4_d",
+          "demangled": "FR_struct_converse::rpy2doublemat(double*, double (*) [4])",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 83,
+      "parameter_list": [
+        {
+          "name": "rpy",
+          "type_prefix": "double",
+          "array_extents": [
+            "3"
+          ],
+          "default": null,
+          "raw": "double rpy[3]"
+        },
+        {
+          "name": "mat",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double mat[4][4]"
+        }
+      ],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "line": 40,
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "owner": "FR_struct_converse",
+      "name": "doublemat2rpy",
+      "return_type": "void",
+      "parameters": "double mat[4][4],double rpy[3]",
+      "signature": "void doublemat2rpy(double mat[4][4],double rpy[3]);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_ZN18FR_struct_converse13doublemat2rpyEPA4_dPd",
+          "demangled": "FR_struct_converse::doublemat2rpy(double (*) [4], double*)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 84,
+      "parameter_list": [
+        {
+          "name": "mat",
+          "type_prefix": "double",
+          "array_extents": [
+            "4",
+            "4"
+          ],
+          "default": null,
+          "raw": "double mat[4][4]"
+        },
+        {
+          "name": "rpy",
+          "type_prefix": "double",
+          "array_extents": [
+            "3"
+          ],
+          "default": null,
+          "raw": "double rpy[3]"
+        }
+      ],
+      "related_types": [],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 17,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeJointsLinMotion",
+      "return_type": "int",
+      "parameters": "JNTS startJoints, JNTS endJoints, QMC_LIMITS_JNTS limitsGoto, QMC_TIMES *tTraj, QMC_ACC_JNTS *accTraj",
+      "signature": "int frmcComputeJointsLinMotion(JNTS startJoints, JNTS endJoints, QMC_LIMITS_JNTS limitsGoto, QMC_TIMES *tTraj, QMC_ACC_JNTS *accTraj);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeJointsLinMotion",
+          "demangled": "frmcComputeJointsLinMotion",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 85,
+      "parameter_list": [
+        {
+          "name": "startJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS startJoints"
+        },
+        {
+          "name": "endJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS endJoints"
+        },
+        {
+          "name": "limitsGoto",
+          "type_prefix": "QMC_LIMITS_JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_JNTS limitsGoto"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES *tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_JNTS *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_JNTS *accTraj"
+        }
+      ],
+      "related_types": [
+        "JNTS",
+        "QMC_ACC_JNTS",
+        "QMC_LIMITS_JNTS",
+        "QMC_TIMES"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 18,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeJointsLinAccVelPos",
+      "return_type": "int",
+      "parameters": "JNTS startJoints, JNTS endJoints, QMC_TIMES tTraj, QMC_ACC_JNTS accTraj, unsigned long numPoint, JNTS *cPoint",
+      "signature": "int frmcComputeJointsLinAccVelPos(JNTS startJoints, JNTS endJoints, QMC_TIMES tTraj, QMC_ACC_JNTS accTraj, unsigned long numPoint, JNTS *cPoint);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeJointsLinAccVelPos",
+          "demangled": "frmcComputeJointsLinAccVelPos",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 86,
+      "parameter_list": [
+        {
+          "name": "startJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS startJoints"
+        },
+        {
+          "name": "endJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS endJoints"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_JNTS accTraj"
+        },
+        {
+          "name": "numPoint",
+          "type_prefix": "unsigned long",
+          "array_extents": [],
+          "default": null,
+          "raw": "unsigned long numPoint"
+        },
+        {
+          "name": "cPoint",
+          "type_prefix": "JNTS *",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS *cPoint"
+        }
+      ],
+      "related_types": [
+        "JNTS",
+        "QMC_ACC_JNTS",
+        "QMC_TIMES"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 19,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeJointsContinueLinMotion",
+      "return_type": "int",
+      "parameters": "JNTS startJoints, JNTS endJoints, QMC_LIMITS_JNTS curlimits, QMC_LIMITS_JNTS limitsGoto, QMC_TIMES *tTraj, QMC_ACC_JNTS *accTraj",
+      "signature": "int frmcComputeJointsContinueLinMotion(JNTS startJoints, JNTS endJoints, QMC_LIMITS_JNTS curlimits, QMC_LIMITS_JNTS limitsGoto, QMC_TIMES *tTraj, QMC_ACC_JNTS *accTraj);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeJointsContinueLinMotion",
+          "demangled": "frmcComputeJointsContinueLinMotion",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 87,
+      "parameter_list": [
+        {
+          "name": "startJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS startJoints"
+        },
+        {
+          "name": "endJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS endJoints"
+        },
+        {
+          "name": "curlimits",
+          "type_prefix": "QMC_LIMITS_JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_JNTS curlimits"
+        },
+        {
+          "name": "limitsGoto",
+          "type_prefix": "QMC_LIMITS_JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_JNTS limitsGoto"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES *tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_JNTS *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_JNTS *accTraj"
+        }
+      ],
+      "related_types": [
+        "JNTS",
+        "QMC_ACC_JNTS",
+        "QMC_LIMITS_JNTS",
+        "QMC_TIMES"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 20,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeJointsContinueLinAccVelPos",
+      "return_type": "int",
+      "parameters": "JNTS startJoints, JNTS endJoints, QMC_TIMES tTraj, QMC_LIMITS_JNTS curlimits, QMC_ACC_JNTS accTraj, unsigned long numPoint, JNTS *cPoint",
+      "signature": "int frmcComputeJointsContinueLinAccVelPos(JNTS startJoints, JNTS endJoints, QMC_TIMES tTraj, QMC_LIMITS_JNTS curlimits, QMC_ACC_JNTS accTraj, unsigned long numPoint, JNTS *cPoint);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeJointsContinueLinAccVelPos",
+          "demangled": "frmcComputeJointsContinueLinAccVelPos",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "blocked: delivered NUM_JNTS=6 / binary JNTS=7",
+      "id": 88,
+      "parameter_list": [
+        {
+          "name": "startJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS startJoints"
+        },
+        {
+          "name": "endJoints",
+          "type_prefix": "JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS endJoints"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES tTraj"
+        },
+        {
+          "name": "curlimits",
+          "type_prefix": "QMC_LIMITS_JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_JNTS curlimits"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_JNTS",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_JNTS accTraj"
+        },
+        {
+          "name": "numPoint",
+          "type_prefix": "unsigned long",
+          "array_extents": [],
+          "default": null,
+          "raw": "unsigned long numPoint"
+        },
+        {
+          "name": "cPoint",
+          "type_prefix": "JNTS *",
+          "array_extents": [],
+          "default": null,
+          "raw": "JNTS *cPoint"
+        }
+      ],
+      "related_types": [
+        "JNTS",
+        "QMC_ACC_JNTS",
+        "QMC_LIMITS_JNTS",
+        "QMC_TIMES"
+      ],
+      "phase_one_status": "upstream-incompatible",
+      "phase_one_reason": "delivered NUM_JNTS=6 conflicts with library; three directly proven functions, other shared-type declarations cannot be accepted"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 23,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeCartLinMotion",
+      "return_type": "int",
+      "parameters": "TRSF startPoint,TRSF endPoint,QMC_LIMITS_CART limitsGoto,QMC_TIMES *tTraj, QMC_ACC_CART *accTraj",
+      "signature": "int frmcComputeCartLinMotion(TRSF startPoint,TRSF endPoint,QMC_LIMITS_CART limitsGoto,QMC_TIMES *tTraj, QMC_ACC_CART *accTraj);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeCartLinMotion",
+          "demangled": "frmcComputeCartLinMotion",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 89,
+      "parameter_list": [
+        {
+          "name": "startPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF startPoint"
+        },
+        {
+          "name": "endPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF endPoint"
+        },
+        {
+          "name": "limitsGoto",
+          "type_prefix": "QMC_LIMITS_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_CART limitsGoto"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES *tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_CART *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_CART *accTraj"
+        }
+      ],
+      "related_types": [
+        "QMC_ACC_CART",
+        "QMC_LIMITS_CART",
+        "QMC_TIMES",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 24,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeCartLinAccVelPos",
+      "return_type": "int",
+      "parameters": "TRSF startPoint, TRSF endPoint, QMC_TIMES tTraj, QMC_ACC_CART accTraj, unsigned long numPoint, TRSF *cPoint",
+      "signature": "int frmcComputeCartLinAccVelPos(TRSF startPoint, TRSF endPoint, QMC_TIMES tTraj, QMC_ACC_CART accTraj, unsigned long numPoint, TRSF *cPoint);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeCartLinAccVelPos",
+          "demangled": "frmcComputeCartLinAccVelPos",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 90,
+      "parameter_list": [
+        {
+          "name": "startPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF startPoint"
+        },
+        {
+          "name": "endPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF endPoint"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_CART accTraj"
+        },
+        {
+          "name": "numPoint",
+          "type_prefix": "unsigned long",
+          "array_extents": [],
+          "default": null,
+          "raw": "unsigned long numPoint"
+        },
+        {
+          "name": "cPoint",
+          "type_prefix": "TRSF *",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF *cPoint"
+        }
+      ],
+      "related_types": [
+        "QMC_ACC_CART",
+        "QMC_TIMES",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 25,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeCartContinueLinMotion",
+      "return_type": "int",
+      "parameters": "TRSF startPoint,TRSF endPoint,QMC_LIMITS_CART curlimits,QMC_LIMITS_CART limitsGoto,QMC_TIMES *tTraj, QMC_ACC_CART *accTraj",
+      "signature": "int frmcComputeCartContinueLinMotion(TRSF startPoint,TRSF endPoint,QMC_LIMITS_CART curlimits,QMC_LIMITS_CART limitsGoto,QMC_TIMES *tTraj, QMC_ACC_CART *accTraj);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeCartContinueLinMotion",
+          "demangled": "frmcComputeCartContinueLinMotion",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 91,
+      "parameter_list": [
+        {
+          "name": "startPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF startPoint"
+        },
+        {
+          "name": "endPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF endPoint"
+        },
+        {
+          "name": "curlimits",
+          "type_prefix": "QMC_LIMITS_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_CART curlimits"
+        },
+        {
+          "name": "limitsGoto",
+          "type_prefix": "QMC_LIMITS_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_CART limitsGoto"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES *tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_CART *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_CART *accTraj"
+        }
+      ],
+      "related_types": [
+        "QMC_ACC_CART",
+        "QMC_LIMITS_CART",
+        "QMC_TIMES",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 26,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeCartContinueLinAccVelPos",
+      "return_type": "int",
+      "parameters": "TRSF startPoint, TRSF endPoint, QMC_TIMES tTraj, QMC_LIMITS_CART curlimits, QMC_ACC_CART accTraj, unsigned long numPoint, TRSF *cPoint",
+      "signature": "int frmcComputeCartContinueLinAccVelPos(TRSF startPoint, TRSF endPoint, QMC_TIMES tTraj, QMC_LIMITS_CART curlimits, QMC_ACC_CART accTraj, unsigned long numPoint, TRSF *cPoint);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeCartContinueLinAccVelPos",
+          "demangled": "frmcComputeCartContinueLinAccVelPos",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 92,
+      "parameter_list": [
+        {
+          "name": "startPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF startPoint"
+        },
+        {
+          "name": "endPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF endPoint"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES tTraj"
+        },
+        {
+          "name": "curlimits",
+          "type_prefix": "QMC_LIMITS_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_CART curlimits"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_CART accTraj"
+        },
+        {
+          "name": "numPoint",
+          "type_prefix": "unsigned long",
+          "array_extents": [],
+          "default": null,
+          "raw": "unsigned long numPoint"
+        },
+        {
+          "name": "cPoint",
+          "type_prefix": "TRSF *",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF *cPoint"
+        }
+      ],
+      "related_types": [
+        "QMC_ACC_CART",
+        "QMC_LIMITS_CART",
+        "QMC_TIMES",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 29,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeCartArcMotion",
+      "return_type": "int",
+      "parameters": "TRSF startPoint, TRSF viaPoint, TRSF viaPoint2, QMC_ARC_OPTION arcOpt, QMC_LIMITS_CART limitsGoto, QMC_TIMES *tTraj, QMC_ACC_CART *accTraj",
+      "signature": "int frmcComputeCartArcMotion(TRSF startPoint, TRSF viaPoint, TRSF viaPoint2, QMC_ARC_OPTION arcOpt, QMC_LIMITS_CART limitsGoto, QMC_TIMES *tTraj, QMC_ACC_CART *accTraj);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeCartArcMotion",
+          "demangled": "frmcComputeCartArcMotion",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 93,
+      "parameter_list": [
+        {
+          "name": "startPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF startPoint"
+        },
+        {
+          "name": "viaPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF viaPoint"
+        },
+        {
+          "name": "viaPoint2",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF viaPoint2"
+        },
+        {
+          "name": "arcOpt",
+          "type_prefix": "QMC_ARC_OPTION",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ARC_OPTION arcOpt"
+        },
+        {
+          "name": "limitsGoto",
+          "type_prefix": "QMC_LIMITS_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_LIMITS_CART limitsGoto"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES *tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_CART *",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_CART *accTraj"
+        }
+      ],
+      "related_types": [
+        "QMC_ACC_CART",
+        "QMC_ARC_OPTION",
+        "QMC_LIMITS_CART",
+        "QMC_TIMES",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 30,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "frmcComputeCartArcAccVelPos",
+      "return_type": "int",
+      "parameters": "TRSF startPoint, TRSF viaPoint, TRSF viaPoint2, QMC_ARC_OPTION arcOpt, QMC_TIMES tTraj, QMC_ACC_CART accTraj, unsigned long numPoint, TRSF *cPoint",
+      "signature": "int frmcComputeCartArcAccVelPos(TRSF startPoint, TRSF viaPoint, TRSF viaPoint2, QMC_ARC_OPTION arcOpt, QMC_TIMES tTraj, QMC_ACC_CART accTraj, unsigned long numPoint, TRSF *cPoint);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "frmcComputeCartArcAccVelPos",
+          "demangled": "frmcComputeCartArcAccVelPos",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 94,
+      "parameter_list": [
+        {
+          "name": "startPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF startPoint"
+        },
+        {
+          "name": "viaPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF viaPoint"
+        },
+        {
+          "name": "viaPoint2",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF viaPoint2"
+        },
+        {
+          "name": "arcOpt",
+          "type_prefix": "QMC_ARC_OPTION",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ARC_OPTION arcOpt"
+        },
+        {
+          "name": "tTraj",
+          "type_prefix": "QMC_TIMES",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_TIMES tTraj"
+        },
+        {
+          "name": "accTraj",
+          "type_prefix": "QMC_ACC_CART",
+          "array_extents": [],
+          "default": null,
+          "raw": "QMC_ACC_CART accTraj"
+        },
+        {
+          "name": "numPoint",
+          "type_prefix": "unsigned long",
+          "array_extents": [],
+          "default": null,
+          "raw": "unsigned long numPoint"
+        },
+        {
+          "name": "cPoint",
+          "type_prefix": "TRSF *",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF *cPoint"
+        }
+      ],
+      "related_types": [
+        "QMC_ACC_CART",
+        "QMC_ARC_OPTION",
+        "QMC_TIMES",
+        "TRSF"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 35,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "sinwave_planning",
+      "return_type": "int",
+      "parameters": "double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T",
+      "signature": "int sinwave_planning(double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_Z16sinwave_planningd5_TRSFS_S_11_Wave_ParamiRS_",
+          "demangled": "sinwave_planning(double, _TRSF, _TRSF, _TRSF, _Wave_Param, int, _TRSF&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 95,
+      "parameter_list": [
+        {
+          "name": "finish_time",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double finish_time"
+        },
+        {
+          "name": "prevPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF prevPoint"
+        },
+        {
+          "name": "curPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF curPoint"
+        },
+        {
+          "name": "nextPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF nextPoint"
+        },
+        {
+          "name": "para",
+          "type_prefix": "Wave_Param",
+          "array_extents": [],
+          "default": null,
+          "raw": "Wave_Param para"
+        },
+        {
+          "name": "trajnum",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int trajnum"
+        },
+        {
+          "name": "out_T",
+          "type_prefix": "TRSF &",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF &out_T"
+        }
+      ],
+      "related_types": [
+        "TRSF",
+        "Wave_Param"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 36,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "trianglewave_planning",
+      "return_type": "int",
+      "parameters": "double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T",
+      "signature": "int trianglewave_planning(double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_Z21trianglewave_planningd5_TRSFS_S_11_Wave_ParamiRS_",
+          "demangled": "trianglewave_planning(double, _TRSF, _TRSF, _TRSF, _Wave_Param, int, _TRSF&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 96,
+      "parameter_list": [
+        {
+          "name": "finish_time",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double finish_time"
+        },
+        {
+          "name": "prevPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF prevPoint"
+        },
+        {
+          "name": "curPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF curPoint"
+        },
+        {
+          "name": "nextPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF nextPoint"
+        },
+        {
+          "name": "para",
+          "type_prefix": "Wave_Param",
+          "array_extents": [],
+          "default": null,
+          "raw": "Wave_Param para"
+        },
+        {
+          "name": "trajnum",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int trajnum"
+        },
+        {
+          "name": "out_T",
+          "type_prefix": "TRSF &",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF &out_T"
+        }
+      ],
+      "related_types": [
+        "TRSF",
+        "Wave_Param"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 37,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "circlewave_planning",
+      "return_type": "int",
+      "parameters": "double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T",
+      "signature": "int circlewave_planning(double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_Z19circlewave_planningd5_TRSFS_S_11_Wave_ParamiRS_",
+          "demangled": "circlewave_planning(double, _TRSF, _TRSF, _TRSF, _Wave_Param, int, _TRSF&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 97,
+      "parameter_list": [
+        {
+          "name": "finish_time",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double finish_time"
+        },
+        {
+          "name": "prevPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF prevPoint"
+        },
+        {
+          "name": "curPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF curPoint"
+        },
+        {
+          "name": "nextPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF nextPoint"
+        },
+        {
+          "name": "para",
+          "type_prefix": "Wave_Param",
+          "array_extents": [],
+          "default": null,
+          "raw": "Wave_Param para"
+        },
+        {
+          "name": "trajnum",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int trajnum"
+        },
+        {
+          "name": "out_T",
+          "type_prefix": "TRSF &",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF &out_T"
+        }
+      ],
+      "related_types": [
+        "TRSF",
+        "Wave_Param"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    },
+    {
+      "header": "SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "line": 38,
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "owner": null,
+      "name": "Ltypewave_planning",
+      "return_type": "int",
+      "parameters": "double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T",
+      "signature": "int Ltypewave_planning(double finish_time,TRSF prevPoint, TRSF curPoint, TRSF nextPoint, Wave_Param para, int trajnum, TRSF &out_T);",
+      "virtual": false,
+      "pure_virtual": false,
+      "constructor": false,
+      "destructor": false,
+      "link_symbols": [
+        {
+          "mangled": "_Z18Ltypewave_planningd5_TRSFS_S_11_Wave_ParamiRS_",
+          "demangled": "Ltypewave_planning(double, _TRSF, _TRSF, _TRSF, _Wave_Param, int, _TRSF&)",
+          "defined_in": [
+            "SDK/lib/libfairino_motion_planner.so.1"
+          ]
+        }
+      ],
+      "definition_status": "exported",
+      "abi_status": "no JNTS mismatch identified; runtime not verified",
+      "id": 98,
+      "parameter_list": [
+        {
+          "name": "finish_time",
+          "type_prefix": "double",
+          "array_extents": [],
+          "default": null,
+          "raw": "double finish_time"
+        },
+        {
+          "name": "prevPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF prevPoint"
+        },
+        {
+          "name": "curPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF curPoint"
+        },
+        {
+          "name": "nextPoint",
+          "type_prefix": "TRSF",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF nextPoint"
+        },
+        {
+          "name": "para",
+          "type_prefix": "Wave_Param",
+          "array_extents": [],
+          "default": null,
+          "raw": "Wave_Param para"
+        },
+        {
+          "name": "trajnum",
+          "type_prefix": "int",
+          "array_extents": [],
+          "default": null,
+          "raw": "int trajnum"
+        },
+        {
+          "name": "out_T",
+          "type_prefix": "TRSF &",
+          "array_extents": [],
+          "default": null,
+          "raw": "TRSF &out_T"
+        }
+      ],
+      "related_types": [
+        "TRSF",
+        "Wave_Param"
+      ],
+      "phase_one_status": "deferred",
+      "phase_one_reason": "outside current dual-arm scope; not exposed as callable API"
+    }
+  ]
+}

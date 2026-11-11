@@ -1,0 +1,258 @@
+{
+  "official_sdk_source": "/home/olorin/下载/SDK_V3.0(1).0/SDK",
+  "ik_source": "/home/olorin/Olorin/01_Elite/fairino_ik",
+  "ik_commit": "f5e50c8daa8128277d77873a041f8e55a2b92544",
+  "files": [
+    {
+      "path": "third_party/official_sdk/include/data_define.h",
+      "sha256": "9a5a089227d27463ddffdb5a6051a12e9b5e3ecb2e70f816ced8a41d1c848822",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/include/data_define.h"
+    },
+    {
+      "path": "third_party/official_sdk/include/humanorid_sdk.h",
+      "sha256": "2c3d4ff7c2239555992538ba83257e812a136ad52f7cdc5c1227074caf82fe9c",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/include/humanorid_sdk.h"
+    },
+    {
+      "path": "third_party/official_sdk/include/kinematic_lib/frmcKinematic.h",
+      "sha256": "1727a57d9d59fede2b68ea3a86cd03a176e9d9bf84b2ee025d851124beadbd0b",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/include/kinematic_lib/frmcKinematic.h"
+    },
+    {
+      "path": "third_party/official_sdk/include/trajectory_plan/trajpath/fr_struct_converse.h",
+      "sha256": "0fe8080e487dd4563c5cccd5235b6b1d608462c973adcae6274cf0e2b3279355",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/include/trajectory_plan/trajpath/fr_struct_converse.h"
+    },
+    {
+      "path": "third_party/official_sdk/include/trajectory_plan/trajpath/fr_traj_parameters.h",
+      "sha256": "e5402800baa5c142a9f7578a51d90749eb85872e2593b17525ace9be3cd7feb8",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/include/trajectory_plan/trajpath/fr_traj_parameters.h"
+    },
+    {
+      "path": "third_party/official_sdk/include/trajectory_plan/trajpath/frmc_basicpath_plan.h",
+      "sha256": "1dcb0fb4e5d75055d074b69eb432163681a70d8c202aa1ddb0fbd2eefa7442f1",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/include/trajectory_plan/trajpath/frmc_basicpath_plan.h"
+    },
+    {
+      "path": "third_party/official_sdk/include/trajectory_plan/trajpath/frmc_struct.h",
+      "sha256": "ec3e504d3fc042c58ed596b87a31690e55170b6b04b30827cee010d63435a3f0",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/include/trajectory_plan/trajpath/frmc_struct.h"
+    },
+    {
+      "path": "third_party/official_sdk/lib/libfairino_middleware_logger.so.1.0.0",
+      "sha256": "5203ad20105780594de4ae241a74d2f2e5c2d3fc7c7174cf7d4ed60382d626a9",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/lib/libfairino_middleware_logger.so.1.0.0"
+    },
+    {
+      "path": "third_party/official_sdk/lib/libfairino_motion_planner.so.1.0.4",
+      "sha256": "ac395138a435dd1666f3b6b4c6f16e8c98b62d3d834a576911398fbdc69893ec",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/lib/libfairino_motion_planner.so.1.0.4"
+    },
+    {
+      "path": "third_party/official_sdk/lib/libhumanorid_sdk.so.3.0.0",
+      "sha256": "4ff58235ce2f8a7e821db3f211d04e0218f2452ab97d4e9d672924a5cd2a513a",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/lib/libhumanorid_sdk.so.3.0.0"
+    },
+    {
+      "path": "third_party/official_sdk/lib/libkine_FR_7Axis.so.1",
+      "sha256": "f6c847773659827651d6433c86c1c57f769272a17f7ad054e1919d1c1c855fb6",
+      "source": "/home/olorin/下载/SDK_V3.0(1).0/SDK/lib/libkine_FR_7Axis.so.1"
+    },
+    {
+      "path": "third_party/fairino_ik/README.md",
+      "sha256": "cdee362f10337c23480c0c3eda903758b70979e549dc34180616ecf0171f3e51",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/README.md"
+    },
+    {
+      "path": "third_party/fairino_ik/cpp/include/fairino_ik/box_qp.hpp",
+      "sha256": "bea678a76ca6dbff9d112bf422216fb0fd385de6fd83600c1082f419f4012ff2",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/cpp/include/fairino_ik/box_qp.hpp"
+    },
+    {
+      "path": "third_party/fairino_ik/cpp/include/fairino_ik/solver.hpp",
+      "sha256": "ecef1625491f42418f0088aa5d3ddcfb14b6adf580dd683b99dbb988673b5841",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/cpp/include/fairino_ik/solver.hpp"
+    },
+    {
+      "path": "third_party/fairino_ik/cpp/src/bindings.cpp",
+      "sha256": "171e42ed0f4725cc451b18b915614224992afe624ead37a75690681f58230eb4",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/cpp/src/bindings.cpp"
+    },
+    {
+      "path": "third_party/fairino_ik/cpp/src/solver.cpp",
+      "sha256": "f4f6e1f1235cf2962edd5ec351ce60d33ef822a52ea66a6513e0cf6c6eda72d0",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/cpp/src/solver.cpp"
+    },
+    {
+      "path": "third_party/fairino_ik/environment.yml",
+      "sha256": "061c0846776dc60fbe42b3d4c6a034adb4fb77d35ec4387749abcff40aa7620a",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/environment.yml"
+    },
+    {
+      "path": "third_party/fairino_ik/pyproject.toml",
+      "sha256": "2f830824f0edb6d86efb8d4dbf3ae6ded28020e375abefa1e41bb7a825eaf48b",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/pyproject.toml"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/fairino_wheel_legged_robot.urdf",
+      "sha256": "cd1a68e5cb0deb6b104f83fe55b1ba436cfa0b690b6a9d237c595f127390c466",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/fairino_wheel_legged_robot.urdf"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel11_Link.STL",
+      "sha256": "c2136488480b0dfb23d47e50651f24b474a7a05bc6a09e1afd22e3f14a85ed5e",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel11_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel12_Link.STL",
+      "sha256": "d5c6587b7d390e63dea3975f488fb344e4ddb38339ab0a1cd7438a701a83f025",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel12_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel21_Link.STL",
+      "sha256": "0ae933b74a349405de4bcbbbb209e1770406887bbed3af33b90a1f839b948f35",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel21_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel22_Link.STL",
+      "sha256": "508ae41daacc433fb19dc001e20f585fcf27ef495a340dcddb60812052347519",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel22_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel31_Link.STL",
+      "sha256": "e5eeb5807a5e1c5ca95e62ae7eb33e8b62a6da050f080e0167344d093342a920",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel31_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel32_Link.STL",
+      "sha256": "cf0bbc7da4a7ae580d0fbeabf644007a8950ce1bbda9e71b7ac318e7b5455b70",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel32_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel41_Link.STL",
+      "sha256": "95c40c3a9ee2e6c4d473795aa54b1a7d97c509b3dfdf9d3141cd8db252141bbd",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel41_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/amr_wheel42_Link.STL",
+      "sha256": "281a47d75f0b67ff7a0058ed74b819c4dcc1894872b036744014e31d4344c8a9",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/amr_wheel42_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/base_link.STL",
+      "sha256": "89f3b8d6d31dc3546e7dd4d8dc35371cf4507007829217b2431a46974f6608b8",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/base_link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/bigleg_Link.STL",
+      "sha256": "c6fb983ac11143c53b0f132e51404ff0c93dbbb1a4a5c10ab7963fbe585fbf68",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/bigleg_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/body_Link.STL",
+      "sha256": "ab29eef070cf959afd1f0f485a03ae9bf2050ca95982f506b7add00363df4a9c",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/body_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/head_Link.STL",
+      "sha256": "0d1d7414f3b91f937a1b46165c4c873f9d0fda9b4a2e0f6de3e08e912b68c90e",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/head_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/hip_Link.STL",
+      "sha256": "040b500ad6b7c3579dee298ab01139c1e35a89ea9ea42f2eb500fdf59dfd197b",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/hip_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_arm_base_Link.STL",
+      "sha256": "bb346f006b49475dd264c3e7d3e702fb5536ef074a13ded12c872351c5402190",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_arm_base_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_forearm1_Link.STL",
+      "sha256": "68897641eb71783dfa1038ac1d300a9107360b44d3ad94a96729f71c970b90a1",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_forearm1_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_forearm2_Link.STL",
+      "sha256": "d6cd8c7ae3065c61c1be196be987465f5105783e2700947062e910ac92389077",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_forearm2_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_shoulder_Link.STL",
+      "sha256": "7c37bc204bfac6dd9a5fc56ae70b225505251c6d4a4e084f3979b5bc1595495c",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_shoulder_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_upperarm1_Link.STL",
+      "sha256": "1475ac582976bb71dd6489200714cfdf51c7bd22972dfa60f9e2fbc298ef0283",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_upperarm1_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_upperarm2_Link.STL",
+      "sha256": "25ac92c7402304764bc30de6530a81fef372fe3d585a4f0600d5fc95c4d602ce",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_upperarm2_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_waist1_Link.STL",
+      "sha256": "5b6a3182a914d8a6b2ab0314d307fe4200b7cd433659b6312d214ea0db05fdd8",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_waist1_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/left_waist2_Link.STL",
+      "sha256": "1c185dc613b1a07a2914b0b7988ddf2d49c673cb731ea8858290982996578e24",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/left_waist2_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_arm_base_Link.STL",
+      "sha256": "708e2058eafd757a5567bdb004026052f263eda6dd2d77ce257ece0d102f1fa5",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_arm_base_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_forearm1_Link.STL",
+      "sha256": "883169865e731d166d4a3787083374411eecc65020861b5f0c621e4c068eaecd",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_forearm1_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_forearm2_Link.STL",
+      "sha256": "b5d76e9de3b537c687c555edd5d6b9d8abb7f561c69e48238838708d5330aec8",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_forearm2_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_shoulder_Link.STL",
+      "sha256": "8b7cbdb0f784d8f72038b737406becebb43bbb100ca0cb12150e200ca5f402bd",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_shoulder_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_upperarm1_Link.STL",
+      "sha256": "e705db0317fe26ccfb2829e6f47ed145206c13f0d9f039e9ed4a99a7e1cf5508",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_upperarm1_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_upperarm2_Link.STL",
+      "sha256": "152bda3b3436255b5fd3b8b4add80762ec1596e54b9deea93aff5bd9075d9789",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_upperarm2_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_waist1_Link.STL",
+      "sha256": "58d0e922acf9d57a9c6612a71d3f91e1113fcb059d47beb3b8df50d80dd846f3",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_waist1_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/right_waist2_Link.STL",
+      "sha256": "26fe89baefbb92e4281db3525903d230dce2f370e201d8debae15e6bc242a5c6",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/right_waist2_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/smallleg_Link.STL",
+      "sha256": "084185727812a61b236189d1228394318d437bd1def19acf7a47bfb951d29985",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/smallleg_Link.STL"
+    },
+    {
+      "path": "libpyfairino/assets/fairino/meshes/waist_Link.STL",
+      "sha256": "25f696d2fe1405cabdceaacea731a51a239bd7cf45210c8fe3929f5d91f7508f",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/waist_Link.STL"
+    }
+  ],
+  "notice": "Private official delivery, local use authorized; do not upload/publish. No SDK client LICENSE or fairino_ik LICENSE file was present; no license has been invented. Service package Apache metadata does not license the client."
+}
