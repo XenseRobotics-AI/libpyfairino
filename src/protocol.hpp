@@ -77,6 +77,20 @@ inline bool valid_frame(const Frame& f) {
   return f.magic == 0x4c504631 && f.version == 2 && f.count <= f.values.size() &&
          f.has_sdk_reply <= 1 && (f.arm == 0 || f.arm == 1);
 }
+// Initialize Ready is an owned success acknowledgement, never an SDK error reply.
+// args/values and other command-specific members may retain the request and are unused here.
+inline bool ready_error_payload(const Frame& f) {
+  return std::any_of(f.error.begin(), f.error.end(), [](char value) { return value != 0; });
+}
+inline bool ready_fault_payload(const Frame& f) {
+  return std::any_of(f.faults.begin(), f.faults.end(), [](const WireFault& w) {
+    return w.id != 0 || w.code != 0 || w.has_sdk_reply != 0;
+  });
+}
+inline bool valid_ready_payload(const Frame& f) {
+  return f.tag == Tag::Ready && f.code == 0 && f.has_sdk_reply == 0 && f.count == 0 &&
+         !ready_error_payload(f) && !ready_fault_payload(f);
+}
 inline void error_text(Frame& f, const char* s) {
   f.error.fill(0);
   std::memcpy(f.error.data(), s, std::min(std::strlen(s), f.error.size()));

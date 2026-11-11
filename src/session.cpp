@@ -228,6 +228,16 @@ Frame Session::receive_locked(const Frame& request, Deadline deadline) {
     if (n != sizeof(response) || !valid_frame(response) || response.sequence != request.sequence ||
         response.op != request.op || response.arm != request.arm)
       throw std::runtime_error("invalid SDK worker reply identity/size");
+    if (request.op == Op::Initialize && response.tag == Tag::Ready &&
+        !valid_ready_payload(response)) {
+      std::ostringstream reason;
+      reason << "invalid initialization Ready: code " << response.code << ", sdk_reply "
+             << static_cast<int>(response.has_sdk_reply) << ", count " << response.count
+             << ", error_payload " << ready_error_payload(response) << ", fault_payload "
+             << ready_fault_payload(response);
+      // Do not promote contradictory Ready fault data into the trusted worker ledger.
+      throw std::runtime_error(reason.str());
+    }
     harvest(response);
     return response;
   }

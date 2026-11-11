@@ -1,3 +1,19 @@
+# Current FA-01 handshake patch validation (0.2.1)
+
+2026-11-12. Baseline 81ecac80a514ced445e3e57272f061ede3fa49dc; D-01..D-06 remain accepted within their existing scope. Only Initialize Ready semantic validation, diagnostics and patch-version documentation changed.
+
+Wheel `libpyfairino-0.2.1-cp312-cp312-linux_x86_64.whl` SHA-256 `2a0984f6ac49a48c96af4ee44ed7f5dadb8705f721aba3f1b0e9108bb06b8ce6`. The existing 0.2.0 installed wheel actually failed the new FA-01 regression: a failed setup Reply changed only to Ready did not raise. The failure is recorded at /tmp/libpyfairino-coordination/dual-arm-handshake-red.log.
+
+The patch requires existing fixed-size/version/request identity validation plus Ready code=0, has_sdk_reply=0, count=0, an empty full error buffer and no fault id/code/SDK-reply data. It checks before trusting the fault ledger, with diagnostic field values, connected=False and existing exact-worker cleanup facts on failure. Args/values and other unused command-specific data may retain the initialization request; they are not required to be zero and no C++ padding is compared. Normal failure Reply keeps its -2 SDK code.
+
+19 targeted cases passed: normal Ready and reconnect; unused-field nonzero/NaN control; unmodified production failure Reply; multi-field failed Reply changed to Ready; independent code, SDK flag, count, first/tail error, fault id/code/flag; wrong identity/version/stage/length; and exit(0)/EOF. All active sessions use an explicit fake backend plus deny_network=True.
+
+Complete applicable suite: 138 passed, 1 skipped. The skip is still the real SDK constructor test, not executed. No vendor constructor or hardware path was touched. Build/install and relocated wheel checks, real 30-declaration compile/link, 50 source hashes and pip check all exited 0. Runtime/dependencies were provisioned/copied from the existing pinned isolated environment, not freshly resolved on another machine. Command records and logs are in /tmp/libpyfairino-coordination/dual-arm-handshake-command-results.json and dual-arm-handshake-*.log/xml/json.
+
+A consistent success message cannot prove a buggy/malicious worker told the truth; this patch rejects contradictions, not hardware state. Original physical calibration, stop/execution, concurrency and platform limits remain. No full-99, platform or additional feature scope was added.
+
+## Historical D-01..D-06 validation record (0.2.0)
+
 # D-01..D-06 repair validation
 
 2026-11-12 local date. Baseline main commit e8f8373c3f025c0c02412e0b27e3a7855143cf1f. New result API is 0.2.0; see api-migration.md. This is offline software evidence, never a hardware motion/stop acceptance.

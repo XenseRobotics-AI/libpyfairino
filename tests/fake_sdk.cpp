@@ -18,7 +18,7 @@
 #include "humanorid_sdk.h"
 struct State {
   std::array<double, 7> q{}, lo{}, hi{};
-  int arm = 0, servo_count = 0, pos_count = 0, stop_count = 0, end_count = 0;
+  int arm = 0, servo_count = 0, pos_count = 0, neg_count = 0, stop_count = 0, end_count = 0;
 };
 static std::map<SingleRobot*, State> states;
 static bool mode(const char* s) {
@@ -208,6 +208,10 @@ ARMErrorCode SingleRobot::SetLimitPositive(double* q) {
   return ARMErrorCode::Success;
 }
 ARMErrorCode SingleRobot::SetLimitNegative(double* q) {
+  auto& state = states[this];
+  ++state.neg_count;
+  int init_code = std::atoi(setting("LPF_TEST_INIT_LIMIT_CODE").c_str());
+  if (state.neg_count == 1 && init_code) return static_cast<ARMErrorCode>(init_code);
   std::copy(q, q + 7, states[this].lo.begin());
   return ARMErrorCode::Success;
 }
