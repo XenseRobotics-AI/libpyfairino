@@ -1,9 +1,44 @@
 """Native dual-arm APIs. Import and Kinematics never connect hardware."""
 from pathlib import Path
 from ._native import (Model, Options, Result, SDKRobotType, SDKRobotName, ARMErrorCode,
-    HardwareConfig, Session, Arm, SdkReply, Snapshot, Controller, ControllerStatus, sdk_math)
+    HardwareConfig, Session as _Session, Arm, SdkReply, Snapshot, Controller, ControllerStatus, sdk_math, CallResult, PairResult, StopReport, ReapReport,
+    CleanupReport, FaultRecord, DispatchState, FaultOrigin, Operation)
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
+
+class CleanupError(RuntimeError):
+    """A context exited without an earlier exception, but cleanup was not fully confirmed."""
+    def __init__(self, result):
+        super().__init__("SDK cleanup failed or remains unconfirmed; inspect .result")
+        self.result = result
+
+class Session(_Session):
+    """Context orchestration around the native structured cleanup contract."""
+    def __enter__(self):
+        if not self.connected:
+            raise RuntimeError("call connect explicitly before entering a session context")
+        return self
+
+    def __exit__(self, exc_type, exc, traceback):
+        try:
+            result = self.close()
+        except BaseException as cleanup_error:
+            if exc is None:
+                raise
+            try:
+                exc.add_note("SDK cleanup raised: " + str(cleanup_error))
+            except BaseException:
+                pass
+            return False
+        if not result.ok:
+            if exc is None:
+                raise CleanupError(result)
+            try:
+                exc.add_note("SDK cleanup was not confirmed; inspect session.last_cleanup")
+            except BaseException:
+                pass
+        return False
+
 DEFAULT_BASE_POSE = (0., -1., 0., 0., 1., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1.)
 URDF_BASE_POSE = (1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1.)
 

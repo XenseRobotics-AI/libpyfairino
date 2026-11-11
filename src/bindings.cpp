@@ -116,17 +116,102 @@ PYBIND11_MODULE(_native, m) {
       .def_readonly("sdk_robot_type", &HardwareConfig::sdk_robot_type)
       .def_readonly("model_compatibility_evidence", &HardwareConfig::model_compatibility_evidence)
       .def_readonly("joint_mapping_evidence", &HardwareConfig::joint_mapping_evidence);
+
+  py::enum_<DispatchState>(m, "DispatchState")
+      .value("NotDispatched", DispatchState::NotDispatched)
+      .value("SdkReplied", DispatchState::SdkReplied)
+      .value("Unknown", DispatchState::Unknown)
+      .value("WorkerRejected", DispatchState::WorkerRejected);
+  py::enum_<FaultOrigin>(m, "FaultOrigin")
+      .value("Watchdog", FaultOrigin::Watchdog)
+      .value("ExplicitStop", FaultOrigin::ExplicitStop)
+      .value("Cleanup", FaultOrigin::Cleanup)
+      .value("Transport", FaultOrigin::Transport);
+  py::enum_<Op> operations(m, "Operation");
+  operations.value("Initialize", Op::Initialize);
+  operations.value("Shutdown", Op::Shutdown);
+  operations.value("MoveJ", Op::MoveJ);
+  operations.value("MoveP", Op::MoveP);
+  operations.value("MoveL", Op::MoveL);
+  operations.value("MoveC", Op::MoveC);
+  operations.value("ServoCart", Op::ServoCart);
+  operations.value("ServoMoveStart", Op::ServoMoveStart);
+  operations.value("ServoMoveEnd", Op::ServoMoveEnd);
+  operations.value("ServoJ", Op::ServoJ);
+  operations.value("StopMotion", Op::StopMotion);
+  operations.value("SetToolCorrd", Op::SetToolCorrd);
+  operations.value("SetAccScale", Op::SetAccScale);
+  operations.value("SetSpeed", Op::SetSpeed);
+  operations.value("GetForwardKin", Op::GetForwardKin);
+  operations.value("GetInverseKin", Op::GetInverseKin);
+  operations.value("GetInverseKinRef", Op::GetInverseKinRef);
+  operations.value("GetActualJointPosDegree", Op::GetActualJointPosDegree);
+  operations.value("GetRobotMotionDone", Op::GetRobotMotionDone);
+  operations.value("GetEEVel", Op::GetEEVel);
+  operations.value("AxisEnable", Op::AxisEnable);
+  operations.value("AxisDisable", Op::AxisDisable);
+  operations.value("AxisZeroing", Op::AxisZeroing);
+  operations.value("AxisResetError", Op::AxisResetError);
+  operations.value("GetActualToolFlangePose", Op::GetActualToolFlangePose);
+  operations.value("SetLimitPositive", Op::SetLimitPositive);
+  operations.value("SetLimitNegative", Op::SetLimitNegative);
+  operations.value("GetJointSoftLimitDeg", Op::GetJointSoftLimitDeg);
+  operations.value("StopAll", Op::StopAll);
+  operations.value("PollStatus", Op::PollStatus);
+
   py::class_<SdkReply>(m, "SdkReply")
       .def_readonly("code", &SdkReply::code)
       .def_property_readonly("error", [](const SdkReply& r) { return decoded(r.error); })
       .def_property_readonly("error_bytes", [](const SdkReply& r) { return py::bytes(r.error); })
       .def_readonly("values", &SdkReply::values)
       .def_readonly("arm_angle_deg", &SdkReply::angle)
-      .def_readonly("state", &SdkReply::state)
+      .def_readonly("motion_state", &SdkReply::state)
       .def_property_readonly("ok", &SdkReply::ok);
+  py::class_<CallResult>(m, "CallResult")
+      .def_readonly("arm", &CallResult::arm)
+      .def_readonly("operation", &CallResult::operation)
+      .def_readonly("state", &CallResult::state)
+      .def_readonly("reply", &CallResult::reply)
+      .def_readonly("reason", &CallResult::reason)
+      .def_property_readonly("ok", &CallResult::ok);
+  py::class_<FaultRecord>(m, "FaultRecord")
+      .def_readonly("id", &FaultRecord::id)
+      .def_readonly("arm", &FaultRecord::arm)
+      .def_readonly("operation", &FaultRecord::operation)
+      .def_readonly("origin", &FaultRecord::origin)
+      .def_readonly("sdk_code", &FaultRecord::sdk_code)
+      .def_readonly("reason", &FaultRecord::reason);
+  py::class_<PairResult>(m, "PairResult")
+      .def_readonly("arms", &PairResult::arms)
+      .def_readonly("target_sequence", &PairResult::target_sequence)
+      .def_readonly("reason", &PairResult::reason)
+      .def_property_readonly("complete", &PairResult::complete)
+      .def_property_readonly("physical_execution_confirmed",
+                             [](const PairResult&) { return false; });
+  py::class_<StopReport>(m, "StopReport")
+      .def_readonly("operations", &StopReport::operations)
+      .def_readonly("faults", &StopReport::faults)
+      .def_readonly("reason", &StopReport::reason)
+      .def_property_readonly("ok", &StopReport::ok)
+      .def_property_readonly("physical_stop_confirmed", [](const StopReport&) { return false; });
+  py::class_<ReapReport>(m, "ReapReport")
+      .def_readonly("reaped", &ReapReport::reaped)
+      .def_readonly("forced", &ReapReport::forced)
+      .def_readonly("exit_code", &ReapReport::exit_code)
+      .def_readonly("term_signal", &ReapReport::term_signal)
+      .def_readonly("error", &ReapReport::error);
+  py::class_<CleanupReport>(m, "CleanupReport")
+      .def_readonly("had_worker", &CleanupReport::had_worker)
+      .def_readonly("stop", &CleanupReport::stop)
+      .def_readonly("process", &CleanupReport::process)
+      .def_readonly("sdk_destructors_completed", &CleanupReport::sdk_destructors_completed)
+      .def_readonly("reason", &CleanupReport::reason)
+      .def_property_readonly("ok", &CleanupReport::ok)
+      .def_property_readonly("physical_stop_confirmed", [](const CleanupReport&) { return false; });
   py::class_<Snapshot>(m, "Snapshot")
       .def_readonly("q_rad", &Snapshot::q_rad)
       .def_readonly("arms", &Snapshot::arms)
+      .def_readonly("faults", &Snapshot::faults)
       .def_readonly("host_read_begin_ns", &Snapshot::host_read_begin_ns)
       .def_readonly("host_read_end_ns", &Snapshot::host_read_end_ns)
       .def_readonly("valid", &Snapshot::valid)
@@ -138,27 +223,41 @@ PYBIND11_MODULE(_native, m) {
       .def("connect", &Session::connect, py::arg("deny_network") = false,
            py::call_guard<py::gil_scoped_release>())
       .def("close", &Session::close, py::call_guard<py::gil_scoped_release>())
-      .def_property_readonly("connected", &Session::connected)
+      .def("stop_all", &Session::stop_all, py::call_guard<py::gil_scoped_release>())
+      .def("poll_status", &Session::poll_status, py::call_guard<py::gil_scoped_release>())
+      .def_property_readonly("faults", &Session::faults)
+      .def_property_readonly("connected",
+                             [](const Session& s) {
+                               py::gil_scoped_release release;
+                               return s.connected();
+                             })
       .def_property_readonly("diagnostic", &Session::diagnostic)
-      .def_property_readonly("log_directory", &Session::log_directory)
-      .def_property_readonly("last_worker_pid", &Session::last_worker_pid)
+      .def_property_readonly("log_directory",
+                             [](const Session& s) {
+                               py::gil_scoped_release release;
+                               return s.log_directory();
+                             })
+      .def_property_readonly("last_worker_pid",
+                             [](const Session& s) {
+                               py::gil_scoped_release release;
+                               return s.last_worker_pid();
+                             })
+      .def_property_readonly("last_cleanup",
+                             [](const Session& s) {
+                               py::gil_scoped_release release;
+                               return s.last_cleanup();
+                             })
+      .def_property_readonly("last_pair",
+                             [](const Session& s) {
+                               py::gil_scoped_release release;
+                               return s.last_pair();
+                             })
       .def_property_readonly("left", [](std::shared_ptr<Session> s) { return s->arm(0); })
       .def_property_readonly("right", [](std::shared_ptr<Session> s) { return s->arm(1); })
       .def("servo_joints", &Session::servo_joints, py::arg("model_q_rad"), py::arg("period_ms"),
            py::call_guard<py::gil_scoped_release>())
       .def("read_state", &Session::read_state, py::call_guard<py::gil_scoped_release>())
-      .def("sdk_degrees", &Session::sdk_degrees, py::arg("model_q_rad"))
-      .def(
-          "__enter__",
-          [](std::shared_ptr<Session> s) {
-            if (!s->connected())
-              throw std::runtime_error("call connect explicitly before entering a session context");
-            return s;
-          })
-      .def("__exit__", [](Session& s, py::object, py::object, py::object) {
-        py::gil_scoped_release release;
-        s.close();
-      });
+      .def("sdk_degrees", &Session::sdk_degrees, py::arg("model_q_rad"));
   py::class_<Arm> arm(m, "Arm");
   arm.def(
       "MoveJ",
@@ -291,11 +390,18 @@ PYBIND11_MODULE(_native, m) {
 
   py::class_<ControllerStatus>(m, "ControllerStatus")
       .def_readonly("running", &ControllerStatus::running)
+      .def_readonly("stop_requested", &ControllerStatus::stop_requested)
       .def_readonly("target_sequence", &ControllerStatus::target_sequence)
       .def_readonly("sent_sequence", &ControllerStatus::sent_sequence)
       .def_readonly("host_send_end_ns", &ControllerStatus::host_send_end_ns)
       .def_readonly("commanded_q_rad", &ControllerStatus::commanded_q_rad)
-      .def_property_readonly("error", [](const ControllerStatus& s) { return decoded(s.error); });
+      .def_property_readonly("error", [](const ControllerStatus& s) { return decoded(s.error); })
+      .def_readonly("cartesian_in_progress", &ControllerStatus::cartesian_in_progress)
+      .def_readonly("last_cartesian_torso", &ControllerStatus::last_cartesian_torso)
+      .def_readonly("last_cartesian_head", &ControllerStatus::last_cartesian_head)
+      .def_readonly("last_pair", &ControllerStatus::last_pair)
+      .def_readonly("stop_result", &ControllerStatus::stop_result)
+      .def_readonly("faults", &ControllerStatus::faults);
   py::class_<Controller>(m, "Controller")
       .def(py::init<std::shared_ptr<Session>, Q14, int, int>(), py::arg("session"),
            py::arg("initial_model_q_rad"), py::arg("period_ms") = 5,
@@ -304,9 +410,17 @@ PYBIND11_MODULE(_native, m) {
       .def("stop", &Controller::stop, py::call_guard<py::gil_scoped_release>())
       .def("submit_joints", &Controller::submit_joints, py::arg("model_q_rad"),
            py::call_guard<py::gil_scoped_release>())
-      .def("submit_cartesian", &Controller::submit_cartesian, py::arg("model"),
-           py::arg("left_pose"), py::arg("right_pose"), py::arg("q_seed"), py::arg("options"),
-           py::call_guard<py::gil_scoped_release>())
+      .def(
+          "submit_cartesian",
+          [](Controller& c, fairino_ik::Model& model, const Pose& left, const Pose& right,
+             const std::vector<double>& seed, const fairino_ik::Options& options) {
+            // Copy while holding the Python GIL. All native checks and solving use this same value.
+            fairino_ik::Options snapshot = options;
+            py::gil_scoped_release release;
+            return c.submit_cartesian(model, left, right, seed, std::move(snapshot));
+          },
+          py::arg("model"), py::arg("left_pose"), py::arg("right_pose"), py::arg("q_seed"),
+          py::arg("options"))
       .def_property_readonly("status", &Controller::status);
   auto sdk =
       m.def_submodule("sdk_math", "Official explicit-DH pure mathematics; deg/mm versus DH m/rad");

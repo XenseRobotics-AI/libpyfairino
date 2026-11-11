@@ -12,12 +12,12 @@ def test_official_adapter_values_and_mutation(config, fake_backend):
     q=[10.]*7
     assert s.left.ServoJ(q,1).ok
     assert q==[10.]*7
-    assert s.left.GetActualJointPosDegree().values==q
-    assert s.right.GetActualJointPosDegree().values==[0.]*7
-    assert s.left.GetForwardKin([1.,2.,3.,4.,5.,6.,7.]).arm_angle_deg==7
-    assert s.left.GetInverseKin([1.,2.,3.,4.,5.,6.],7).values==[1.,2.,3.,4.,5.,6.,7.]
-    assert s.left.GetJointSoftLimitDeg().values==[-180.]*7+[180.]*7
-    assert s.left.GetRobotMotionDone().state==1
+    assert s.left.GetActualJointPosDegree().reply.values==q
+    assert s.right.GetActualJointPosDegree().reply.values==[0.]*7
+    assert s.left.GetForwardKin([1.,2.,3.,4.,5.,6.,7.]).reply.arm_angle_deg==7
+    assert s.left.GetInverseKin([1.,2.,3.,4.,5.,6.],7).reply.values==[1.,2.,3.,4.,5.,6.,7.]
+    assert s.left.GetJointSoftLimitDeg().reply.values==[-180.]*7+[180.]*7
+    assert s.left.GetRobotMotionDone().reply.motion_state==1
     state=s.read_state()
     assert state.valid and not state.hardware_freshness_known
     assert state.hardware_timestamp_ns is None
@@ -41,17 +41,17 @@ def test_error_buffer_is_bounded_and_unsent_arm_is_not_success(config, fake_back
     monkeypatch.setenv("LIBPYFAIRINO_TEST_MODE","error_buffer")
     s=f.Session(config,backend_override=fake_backend);s.connect(deny_network=True)
     s.left.ServoMoveStart();s.right.ServoMoveStart()
-    replies=s.servo_joints([0.]*14,1)
-    assert replies[0].code==-2 and len(replies[0].error_bytes)==1024
-    assert replies[0].error=="X"*1024
-    assert not replies[1].ok and "not sent" in replies[1].error
+    replies=s.servo_joints([0.]*14,1).arms
+    assert replies[0].reply.code==-2 and len(replies[0].reply.error_bytes)==1024
+    assert replies[0].reply.error=="X"*1024
+    assert not replies[1].ok and "nonzero" in replies[1].reason
     s.close()
 
 def test_native_worker_watchdog(config, fake_backend):
     s=f.Session(config,backend_override=fake_backend);s.connect(deny_network=True)
     s.left.ServoMoveStart();time.sleep(.2)
     reply=s.left.ServoJ([0.]*7,1)
-    assert not reply.ok and "watchdog" in reply.error
+    assert not reply.ok and "watchdog" in reply.reason
     s.close()
 
 def test_native_controller_ramp_and_watchdog(config, fake_backend):
@@ -65,7 +65,7 @@ def test_native_controller_ramp_and_watchdog(config, fake_backend):
     assert status.host_send_end_ns>0
     deadline=time.monotonic()+2
     while c.status.running and time.monotonic()<deadline:time.sleep(.01)
-    assert not c.status.running and "watchdog" in c.status.error
+    assert not c.status.running and "deadline" in c.status.error
     c.stop();s.close()
 
 def test_explicit_mapping_and_model_limits():
@@ -100,7 +100,7 @@ def test_runtime_limits_remain_consistent(config, fake_backend):
     s.left.ServoMoveStart()
     with pytest.raises(ValueError,match="active confirmed"):
         s.left.ServoJ([100.]*7,1)
-    assert s.left.GetJointSoftLimitDeg().values==[-90.]*7+[90.]*7
+    assert s.left.GetJointSoftLimitDeg().reply.values==[-90.]*7+[90.]*7
     s.close()
 
 

@@ -511,7 +511,7 @@
         "RobotName"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Session explicit connect/close lifecycle"
+      "phase_one_reason": "Explicit Session construction and staged normal destruction/exit; structured cleanup result required"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -541,7 +541,7 @@
       "parameter_list": [],
       "related_types": [],
       "phase_one_status": "supported",
-      "phase_one_reason": "Session explicit connect/close lifecycle"
+      "phase_one_reason": "Explicit Session construction and staged normal destruction/exit; structured cleanup result required"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -604,7 +604,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.MoveJ via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.MoveJ returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -674,7 +674,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.MoveP via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.MoveP returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -744,7 +744,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.MoveL via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.MoveL returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -828,7 +828,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.MoveC via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.MoveC returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -884,7 +884,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.ServoCart via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.ServoCart returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -916,7 +916,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.ServoMoveStart via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.ServoMoveStart returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -948,7 +948,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.ServoMoveEnd via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.ServoMoveEnd returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1004,7 +1004,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.ServoJ via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.ServoJ returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1036,7 +1036,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.StopMotion via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.StopMotion returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1083,7 +1083,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.SetToolCorrd via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.SetToolCorrd returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1123,7 +1123,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.SetAccScale via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.SetAccScale returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1163,7 +1163,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.SetSpeed via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.SetSpeed returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1217,7 +1217,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetForwardKin via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetForwardKin returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1271,7 +1271,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetInverseKin via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetInverseKin returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1332,7 +1332,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetInverseKinRef via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetInverseKinRef returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1374,7 +1374,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetActualJointPosDegree via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetActualJointPosDegree returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1414,7 +1414,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetRobotMotionDone via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetRobotMotionDone returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1456,7 +1456,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetEEVel via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetEEVel returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1496,7 +1496,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.AxisEnable via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.AxisEnable returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1536,7 +1536,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.AxisDisable via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.AxisDisable returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1576,7 +1576,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.AxisZeroing via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.AxisZeroing returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1608,7 +1608,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.AxisResetError via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.AxisResetError returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1659,7 +1659,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetActualToolFlangePose via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetActualToolFlangePose returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1701,7 +1701,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.SetLimitPositive via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.SetLimitPositive returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1743,7 +1743,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.SetLimitNegative via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.SetLimitNegative returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",
@@ -1794,7 +1794,7 @@
         "ARMErrorCode"
       ],
       "phase_one_status": "supported",
-      "phase_one_reason": "Arm.GetJointSoftLimitDeg via isolated real SDK backend; runtime requires confirmed configuration"
+      "phase_one_reason": "Arm.GetJointSoftLimitDeg returns CallResult with optional original SdkReply via isolated backend"
     },
     {
       "header": "SDK/include/humanorid_sdk.h",

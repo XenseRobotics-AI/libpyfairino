@@ -1,5 +1,4 @@
 #include <poll.h>
-#include <sys/socket.h>
 #include <unistd.h>
 
 #include <algorithm>
@@ -7,6 +6,7 @@
 #include <chrono>
 #include <limits>
 #include <memory>
+#include <optional>
 #include <stdexcept>
 
 #include "humanorid_sdk.h"
@@ -20,11 +20,16 @@ void send_frame(int fd, const Frame& f) {
 bool receive(int fd, Frame& f) {
   std::array<char, sizeof(Frame) + 1> bytes;
   auto n = read(fd, bytes.data(), bytes.size());
-  if (n == sizeof(Frame)) std::memcpy(&f, bytes.data(), sizeof(Frame));
   if (n == 0) return false;
-  if (n != sizeof(f) || !valid_frame(f) || f.tag != Tag::Request)
-    throw std::runtime_error("invalid worker request");
+  if (n != sizeof(f)) throw std::runtime_error("invalid worker frame size");
+  std::memcpy(&f, bytes.data(), sizeof(f));
+  if (!valid_frame(f) || f.tag != Tag::Request) throw std::runtime_error("invalid worker request");
   return true;
+}
+bool motion(Op op) {
+  return op == Op::MoveJ || op == Op::MoveP || op == Op::MoveL || op == Op::MoveC ||
+         op == Op::ServoCart || op == Op::ServoJ || op == Op::ServoMoveStart ||
+         op == Op::AxisEnable;
 }
 }  // namespace
 extern "C" int libpyfairino_backend_main(int fd) {
@@ -32,17 +37,27 @@ extern "C" int libpyfairino_backend_main(int fd) {
   std::array<std::unique_ptr<SingleRobot>, 2> arms;
   std::array<bool, 2> servo{};
   std::array<std::chrono::steady_clock::time_point, 2> last;
+  std::array<WireFault, 6> faults{};
+  std::uint64_t fault_id = 0;
   int watchdog = 500;
-  auto stop = [&]() {
-    int code = 0;
-    for (int a = 0; a < 2; ++a)
-      if (arms[a]) {
-        auto x = arms[a]->StopMotion();
-        auto y = arms[a]->ServoMoveEnd();
-        if (x != ARMErrorCode::Success) code = static_cast<int>(x);
-        if (y != ARMErrorCode::Success) code = static_cast<int>(y);
-        servo[a] = false;
-      }
+  auto latch = [&](int arm, Op op, FaultOrigin origin, std::optional<int> code) {
+    const int slot = arm * 3 + (op == Op::StopMotion ? 0 : op == Op::ServoMoveEnd ? 1 : 2);
+    if (!faults[slot].id)
+      faults[slot] = {++fault_id,
+                      arm,
+                      op,
+                      origin,
+                      code.value_or(0),
+                      static_cast<std::uint8_t>(code.has_value())};
+  };
+  auto publish = [&](Frame& f) {
+    f.faults = faults;
+    send_frame(fd, f);
+  };
+  auto stop_one = [&](int a, Op op, FaultOrigin origin) {
+    auto code = op == Op::StopMotion ? arms[a]->StopMotion() : arms[a]->ServoMoveEnd();
+    servo[a] = false;
+    if (code != ARMErrorCode::Success) latch(a, op, origin, static_cast<int>(code));
     return code;
   };
   try {
@@ -59,15 +74,16 @@ extern "C" int libpyfairino_backend_main(int fd) {
       auto hi = arms[a]->SetLimitPositive(f.values.data() + 14 + a * 7);
       if (lo != ARMErrorCode::Success || hi != ARMErrorCode::Success) {
         f.tag = Tag::Reply;
+        f.has_sdk_reply = 1;
         f.code = static_cast<int>(lo != ARMErrorCode::Success ? lo : hi);
-        error_text(f, "failed to apply confirmed SDK joint limits");
-        send_frame(fd, f);
+        error_text(f, "failed to apply confirmed SDK limits");
+        publish(f);
         return 66;
       }
     }
     f.tag = Tag::Ready;
     f.count = 0;
-    send_frame(fd, f);
+    publish(f);
     for (;;) {
       pollfd p{fd, POLLIN, 0};
       int pr = poll(&p, 1, 10);
@@ -75,21 +91,42 @@ extern "C" int libpyfairino_backend_main(int fd) {
         if (errno == EINTR) continue;
         throw std::runtime_error("worker poll failed");
       }
-      auto now = std::chrono::steady_clock::now();
+      const auto now = std::chrono::steady_clock::now();
       for (int a = 0; a < 2; ++a)
         if (servo[a] && now - last[a] > std::chrono::milliseconds(watchdog)) {
-          arms[a]->StopMotion();
-          arms[a]->ServoMoveEnd();
-          servo[a] = false;
+          latch(a, Op::ServoJ, FaultOrigin::Watchdog, std::nullopt);
+          stop_one(a, Op::StopMotion, FaultOrigin::Watchdog);
+          stop_one(a, Op::ServoMoveEnd, FaultOrigin::Watchdog);
         }
       if (!pr) continue;
       if (!receive(fd, f)) break;
       if (f.op == Op::Initialize) throw std::runtime_error("duplicate initialization");
-      if (f.op == Op::Shutdown) {
-        f.code = stop();
-        f.count = 0;
+      if (f.op == Op::PollStatus) {
         f.tag = Tag::Reply;
-        send_frame(fd, f);
+        f.count = 0;
+        publish(f);
+        continue;
+      }
+      if (f.op == Op::StopAll || f.op == Op::Shutdown) {
+        const bool shutdown = f.op == Op::Shutdown;
+        for (int index = 0; index < 4; ++index) {
+          const int arm = index / 2;
+          const Op op = index % 2 ? Op::ServoMoveEnd : Op::StopMotion;
+          f.code = static_cast<int>(stop_one(arm, op, FaultOrigin::Cleanup));
+          f.has_sdk_reply = 1;
+          f.arg0 = index;
+          f.count = 0;
+          f.tag = Tag::StopProgress;
+          publish(f);
+        }
+        f.tag = Tag::Stopped;
+        f.has_sdk_reply = 0;
+        publish(f);
+        if (!shutdown) continue;
+        arms[0].reset();
+        arms[1].reset();
+        f.tag = Tag::Destructed;
+        publish(f);
         return 0;
       }
       int expected = 0;
@@ -120,6 +157,19 @@ extern "C" int libpyfairino_backend_main(int fd) {
           break;
       }
       if (f.count != expected) throw std::runtime_error("invalid SDK operation buffer length");
+
+      const bool faulted =
+          std::any_of(faults.begin(), faults.end(), [](const WireFault& w) { return w.id != 0; });
+      if ((motion(f.op) && faulted) || (f.op == Op::ServoJ && !servo[f.arm])) {
+        f.tag = Tag::Reply;
+        f.has_sdk_reply = 0;
+        f.count = 0;
+        error_text(f, faulted
+                          ? "latched watchdog/stop fault; close and reconstruct before new motion"
+                          : "servo is not active");
+        publish(f);
+        continue;
+      }
       auto& r = *arms[f.arm];
       auto input = f.values;
       std::fill(f.values.begin(), f.values.end(), std::numeric_limits<double>::quiet_NaN());
@@ -155,13 +205,8 @@ extern "C" int libpyfairino_backend_main(int fd) {
           servo[f.arm] = false;
           break;
         case Op::ServoJ:
-          if (!servo[f.arm]) {
-            error_text(f, "native servo is not active or worker command watchdog expired");
-            code = ARMErrorCode::CMD_RunErr;
-          } else {
-            code = r.ServoJ(input.data(), f.arg0, error);
-            last[f.arm] = std::chrono::steady_clock::now();
-          }
+          code = r.ServoJ(input.data(), f.arg0, error);
+          last[f.arm] = std::chrono::steady_clock::now();
           break;
         case Op::StopMotion:
           code = r.StopMotion();
@@ -228,18 +273,23 @@ extern "C" int libpyfairino_backend_main(int fd) {
         default:
           throw std::runtime_error("unknown SDK arm operation");
       }
+
+      if ((f.op == Op::StopMotion || f.op == Op::ServoMoveEnd) && code != ARMErrorCode::Success)
+        latch(f.arm, f.op, FaultOrigin::ExplicitStop, static_cast<int>(code));
       f.code = static_cast<int>(code);
+      f.has_sdk_reply = 1;
       if (error[0]) std::copy(std::begin(error), std::end(error), f.error.begin());
       f.tag = Tag::Reply;
-      send_frame(fd, f);
+      publish(f);
     }
-    stop();
+    // Parent EOF: one finite sequence of attempts. A blocked SDK still requires host/OS
+    // supervision.
+    for (int a = 0; a < 2; ++a) {
+      stop_one(a, Op::StopMotion, FaultOrigin::Cleanup);
+      stop_one(a, Op::ServoMoveEnd, FaultOrigin::Cleanup);
+    }
     return 0;
   } catch (const std::exception&) {
-    try {
-      stop();
-    } catch (...) {
-    }
     return 70;
   }
 }

@@ -10,7 +10,7 @@ def fake_backend(tmp_path_factory):
     path = tmp_path_factory.mktemp("explicit-fake-sdk") / "test_sdk_backend.so"
     subprocess.run(["g++", "-std=c++17", "-shared", "-fPIC", "-pthread",
         "-I"+str(ROOT/"src"), "-I"+str(ROOT/"third_party/official_sdk/include"),
-        str(ROOT/"src/backend.cpp"), str(ROOT/"tests/fake_sdk.cpp"), "-o", str(path)], check=True)
+        str(ROOT/"src/backend.cpp"), str(ROOT/"tests/fake_sdk.cpp"), str(ROOT/"tests/corrupt_reply.cpp"), "-Wl,--wrap=write", "-o", str(path)], check=True)
     return str(path)
 
 @pytest.fixture
