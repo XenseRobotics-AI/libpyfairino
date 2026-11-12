@@ -127,7 +127,7 @@ Session::~Session() {
   if (pidfd_ >= 0) ::close(pidfd_);
 }
 bool Session::connected() const {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   return fd_ >= 0;
 }
 std::string Session::diagnostic() const {
@@ -135,11 +135,11 @@ std::string Session::diagnostic() const {
   return diagnostic_;
 }
 std::string Session::log_directory() const {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   return log_directory_;
 }
 int Session::last_worker_pid() const {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   return last_worker_pid_;
 }
 std::vector<FaultRecord> Session::faults() const {
@@ -147,11 +147,11 @@ std::vector<FaultRecord> Session::faults() const {
   return faults_;
 }
 CleanupReport Session::last_cleanup() const {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   return last_cleanup_;
 }
 PairResult Session::last_pair() const {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   return last_pair_;
 }
 Arm Session::arm(int side) {
@@ -326,7 +326,7 @@ ReapReport Session::reap_locked(Deadline deadline, bool force) {
   return report;
 }
 void Session::connect(bool deny_network) {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   if (fd_ >= 0 || pid_ > 0)
     throw std::runtime_error("close/reap the previous worker before connecting");
   {
@@ -504,7 +504,7 @@ CallResult Session::dispatch_locked(Frame frame, Deadline deadline) {
 }
 CallResult Session::call(int arm, Op op, const std::vector<double>& values, int arg0, double speed,
                          double acceleration, double angle) {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   auto frame = prepare_locked(arm, op, values, arg0, speed, acceleration, angle);
   auto result = dispatch_locked(frame, Deadline::max());
   if (result.ok() && op == Op::SetLimitPositive)
@@ -518,7 +518,7 @@ PairResult Session::servo_joints(const Q14& q, int period) {
 }
 PairResult Session::dispatch_pair(const Q14& q, int period, std::uint64_t target_sequence,
                                   Deadline deadline, const std::atomic<bool>* stop) {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   // All locally knowable failures are checked while holding the same lock as limit updates.
   validate_target(q);
   auto degrees = sdk_degrees(q);
@@ -554,7 +554,7 @@ PairResult Session::dispatch_pair(const Q14& q, int period, std::uint64_t target
   return pair;
 }
 std::vector<FaultRecord> Session::poll_status() {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   if (fd_ >= 0) {
     Frame f;
     f.op = Op::PollStatus;
@@ -624,7 +624,7 @@ StopReport Session::stop_locked(bool shutdown, Deadline deadline, bool& destruct
   return stop;
 }
 StopReport Session::stop_all() {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   bool unused = false;
   auto deadline = rpc_deadline(config_.rpc_timeout_ms);
   auto stop = stop_locked(false, deadline, unused);
@@ -638,7 +638,7 @@ StopReport Session::stop_all() {
   return stop;
 }
 CleanupReport Session::close() {
-  std::lock_guard<std::mutex> lock(mutex_);
+  std::lock_guard<FifoMutex> lock(mutex_);
   if (fd_ < 0) {
     if (pid_ > 0) {
       auto previous = last_cleanup_.process;

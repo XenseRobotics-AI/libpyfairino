@@ -2,7 +2,7 @@
 
 A fresh posix_spawn C++ worker owns both SDK arms. Host Model and ordinary construction remain offline. A pidfd launch gate precedes backend loading; explicit denied tests install seccomp before dlopen. Every SDK entry is made through real public declarations.
 
-One non-recursive Session mutex owns active limits, complete pair preparation and ordered dispatch, single calls, and lifecycle transactions. Internal prepare_locked/dispatch_locked do not reenter the public locking methods. Host fault cache has a separate short-lived mutex. Controller target/status locks never cover SDK waiting. Stop is an atomic request before lifecycle join.
+One non-recursive FIFO Session mutex owns active limits, complete pair preparation and ordered dispatch, single calls, and lifecycle transactions. Internal prepare_locked/dispatch_locked do not reenter the public locking methods. Host fault cache has a separate short-lived mutex. Controller target/status locks never cover SDK waiting. Stop is an atomic request before lifecycle join.
 
 The Controller captures a complete target/sequence/submitted/deadline value. Existing old transactions may complete only inside that old lease. Per-arm pre-dispatch checks and min(target deadline,RPC deadline) enforce that policy; successful pair bookkeeping is updated only after both original SDK-zero replies.
 

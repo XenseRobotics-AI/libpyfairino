@@ -1,3 +1,38 @@
+# FIFO session admission (0.2.3)
+
+2026-11-12. LeRobot's continuous recording loop exposed feedback starvation:
+two SDK ServoJ calls each wait for their requested period. Together they
+can overrun the controller period, so the sender immediately takes the
+non-fair Session mutex again. A queued read can wait until the target
+watchdog expires. The isolated `test_stream_reads.py` regression failed
+on 0.2.2 with disconnected state replies.
+
+Session admission now uses a FIFO ticket mutex. Existing paired preflight,
+ordered dispatch, captured deadlines and fault records remain unchanged.
+The controller's stop request remains observable before waiting for any
+session operation. This does not promise a hard real-time bound or hardware
+feedback freshness.
+
+The installed 0.2.3 wheel passed all 139 native tests with one real-SDK test
+skipped, installed-wheel verification, and both Tianji import/FK/IK orders.
+LeRobot passed 43 adapter and lifecycle tests with the explicit fake backend.
+Additional contention checks covered six simultaneous feedback readers,
+stop while readers are queued, and a target expiring while queued behind
+a limit setter. No hardware connection or motion was performed.
+
+```sh
+python -I -B -m pytest -q -p no:cacheprovider tests
+python -I -B tools/verify_installed.py --output /tmp/fairino-installed.json
+python -I -B tools/verify_shared_runtime.py
+```
+
+Local failure evidence is `/tmp/fairino-stream-red.log`; the full native
+result is `/tmp/fairino-fairness-tests.log`. The tested local wheel is kept
+in the ignored `dist/` directory. Dependencies remain the 0.2.2 combination
+recorded below.
+
+---
+
 # Pinocchio 4.1 runtime alignment (0.2.2)
 
 2026-11-12. Build and runtime now use Pinocchio 4.1.0, Boost 1.90.0,

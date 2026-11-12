@@ -11,6 +11,7 @@
 
 #include "fairino_ik/solver.hpp"
 #include "protocol.hpp"
+#include "fifo_mutex.hpp"
 namespace lpf {
 using Q7 = std::array<double, 7>;
 using Q14 = std::array<double, 14>;
@@ -140,7 +141,8 @@ class Session : public std::enable_shared_from_this<Session> {
   HardwareConfig config_;
   Q14 active_lower_, active_upper_;
   std::string worker_, backend_, diagnostic_, log_directory_;
-  mutable std::mutex mutex_, fault_mutex_;
+  mutable FifoMutex mutex_;
+  mutable std::mutex fault_mutex_;
   std::vector<FaultRecord> faults_;
   CleanupReport last_cleanup_;
   PairResult last_pair_;

@@ -4,7 +4,7 @@ from ._native import (Model, Options, Result, SDKRobotType, SDKRobotName, ARMErr
     HardwareConfig, Session as _Session, Arm, SdkReply, Snapshot, Controller, ControllerStatus, sdk_math, CallResult, PairResult, StopReport, ReapReport,
     CleanupReport, FaultRecord, DispatchState, FaultOrigin, Operation)
 
-__version__ = "0.2.2"
+__version__ = "0.2.3"
 
 class CleanupError(RuntimeError):
     """A context exited without an earlier exception, but cleanup was not fully confirmed."""
