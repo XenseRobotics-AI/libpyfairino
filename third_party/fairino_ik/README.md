@@ -221,8 +221,22 @@ mamba activate fairino
 python -m pip install -e .
 ```
 
-该命令会同时安装核心、Qt、MeshCat 和测试依赖，并固定 Pinocchio 3.9.0
-与其匹配的 urdfdom/tinyxml2 原生 ABI。请确保 `python` 和 `pip` 来自同一个已激活环境。
+该命令会同时安装核心、Qt、MeshCat 和测试依赖，并固定 Pinocchio 4.1.0、
+Boost 1.90.0、NumPy 2.2.4、urdfdom 6.0.0、tinyxml2 11.0.0 和 eiquadprog 1.3.2，
+与 LeRobot 工位的原生运行库保持一致。请确保 `python` 和 `pip` 来自同一个已激活环境。
+从旧版本升级时须重新编译本扩展；旧 `.so` 不能通过替换运行库复用。
+构建改用 scikit-build-core 和 Pinocchio 官方 CMake target，自动继承配套的
+编译定义、头文件和链接库；不再使用 `setup.py` 手工拼装编译参数。
+
+本次升级在干净 Python 3.12 环境构建并安装 wheel 后运行全部测试，50 项通过，
+包括无界面 Qt 测试。复现命令：
+
+```bash
+python -m pip install build
+python -m build --wheel
+python -m pip install dist/fairino_ik-0.1.1-*.whl
+QT_QPA_PLATFORM=offscreen python -I -B -m pytest -q tests -p no:cacheprovider
+```
 
 启动命令会检测 `/opt/ros` 中不兼容的 Pinocchio Python/动态库路径，并自动以隔离环境重启。也可以手动运行：
 

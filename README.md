@@ -6,11 +6,11 @@ This implements the accepted dual-arm subset, not all 99 official declarations. 
 
 ## Build and install locally
 
-Use a clean Python 3.12 venv. The pinned build dependencies select Pinocchio 3.9 and eiquadprog 1.3.0 with compatible Boost 1.89. eiquadprog 1.2.9 conflicts with that Boost version. Eigen 3.4 headers and a C++17 compiler are required; the isolated cmeel prefix also supplies Eigen when available. No Qt or MeshCat is needed.
+Use a clean Python 3.12 venv. The pinned build and runtime dependencies match the LeRobot environment: Pinocchio 4.1.0, Boost 1.90.0, NumPy 2.2.4, urdfdom 6.0.0 and tinyxml2 11.0.0. Building also requires eiquadprog 1.3.2; version 1.3.0 requires Boost 1.89 and cannot satisfy this combination. Rebuild the extension when upgrading from 0.2.1; its old binary targets different native libraries. Eigen 3.4 headers and a C++17 compiler are required; the isolated cmeel prefix also supplies Eigen when available. No Qt or MeshCat is needed.
 
 ```sh
 python3.12 -m venv /tmp/fairino-build
-/tmp/fairino-build/bin/pip install build 'scikit-build-core==0.11.6' 'pybind11==3.0.1' 'pin==3.9.0' 'cmeel-urdfdom==4.0.1' 'cmeel-tinyxml2==10.0.0' 'eiquadprog==1.3.0'
+/tmp/fairino-build/bin/pip install build 'scikit-build-core==0.11.6' 'pybind11==3.0.1' 'pin==4.1.0' 'cmeel-boost==1.90.0' 'numpy==2.2.4' 'cmeel-urdfdom[build]==6.0.0' 'cmeel-tinyxml2==11.0.0' 'eiquadprog==1.3.2'
 CMAKE_BUILD_PARALLEL_LEVEL=1 /tmp/fairino-build/bin/python -m build --wheel --no-isolation -Cbuild-dir=/tmp/fairino-cmake --outdir /tmp/fairino-dist .
 /tmp/fairino-build/bin/pip install /tmp/fairino-dist/libpyfairino-*.whl
 ```

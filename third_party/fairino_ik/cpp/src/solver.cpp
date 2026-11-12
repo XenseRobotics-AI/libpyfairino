@@ -14,7 +14,7 @@
 #include <pinocchio/algorithm/kinematics.hpp>
 #include <pinocchio/algorithm/model.hpp>
 #include <pinocchio/parsers/urdf.hpp>
-#include <pinocchio/spatial/explog.hpp>
+#include <pinocchio/spatial.hpp>
 #include <Eigen/SVD>
 
 namespace fairino_ik {

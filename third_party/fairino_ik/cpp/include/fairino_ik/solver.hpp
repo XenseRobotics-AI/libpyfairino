@@ -8,8 +8,7 @@
 #include <vector>
 
 #include <Eigen/Core>
-#include <pinocchio/multibody/data.hpp>
-#include <pinocchio/multibody/model.hpp>
+#include <pinocchio/multibody.hpp>
 #include "fairino_ik/box_qp.hpp"
 
 namespace fairino_ik {

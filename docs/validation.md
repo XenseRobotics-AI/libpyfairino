@@ -1,4 +1,57 @@
-# Current FA-01 handshake patch validation (0.2.1)
+# Pinocchio 4.1 runtime alignment (0.2.2)
+
+2026-11-12. Build and runtime now use Pinocchio 4.1.0, Boost 1.90.0,
+NumPy 2.2.4, urdfdom 6.0.0 and tinyxml2 11.0.0. Build-only QP headers
+come from eiquadprog 1.3.2. The previous 1.3.0 distribution requires Boost
+1.89 and cannot resolve with this combination. URDF build headers are
+requested through `cmeel-urdfdom[build]`.
+
+The copied IK source matches the `feat/pinocchio-4.1.0` worktree in
+`fairino_ik`. Provenance `ik_commit` pins the committed source revision,
+`ik_worktree_modified` is false, and per-file SHA-256 values identify the
+exact copied bytes. Official SDK files are unchanged.
+`tools/verify_sources.py` verifies both copies and reports this distinction.
+
+Both libraries now use Pinocchio's exported CMake targets. The IK headers
+use Pinocchio 4 public multibody/spatial headers. No IK equations, mappings,
+control logic, watchdogs or hardware configuration gates were changed.
+
+A fresh Python 3.12 virtual environment resolved and installed these exact
+requirements. Both the explicit build environment and the default PEP 517
+isolated build completed; the final isolated-build wheels were reinstalled
+and passed the same tests and co-loading checks. Local wheels are retained
+in each repository's ignored `dist/` directory. After installing the built wheels, `pip check` passed,
+`fairino_ik` had 50 passing tests including offscreen Qt, and libpyfairino
+had 138 passing tests with one real-SDK constructor test skipped. Fake SDK
+tests use `deny_network=True`; no real controller was connected.
+
+`tools/verify_installed.py` passed with PYTHONPATH, LD_LIBRARY_PATH and
+LD_PRELOAD removed. It checked installed FK/IK, model and SDK asset hashes,
+relative ELF runtime paths, and absence of the transport SDK on offline import.
+
+The existing Tianji API 9 binary from the LeRobot installation was loaded
+with the new Fairino wheel in each import order. Both libraries passed
+FK/IK and mapped the same single Pinocchio 4.1 shared library. Reproduce
+in an environment containing both packages:
+
+```sh
+python -m pip check
+python -I -B -m pytest -q -p no:cacheprovider tests
+python -I -B tools/verify_installed.py --output /tmp/fairino-installed.json
+python -I -B tools/verify_shared_runtime.py
+```
+
+For an existing source installation of Tianji, pass
+`--tianji-source /path/to/libpytianji` to the last command. The script only
+constructs offline kinematics models, never Session or control objects.
+Local evidence is under `/tmp/fairino-pin41-*.log` and
+`/tmp/fairino-pin41-shared-runtime.json`. The existing LeRobot conda
+environment was not modified. This validates native software compatibility,
+not robot calibration, physical motion or the pending LeRobot adapter.
+
+---
+
+# Historical FA-01 handshake patch validation (0.2.1)
 
 2026-11-12. Baseline 81ecac80a514ced445e3e57272f061ede3fa49dc; D-01..D-06 remain accepted within their existing scope. Only Initialize Ready semantic validation, diagnostics and patch-version documentation changed.
 

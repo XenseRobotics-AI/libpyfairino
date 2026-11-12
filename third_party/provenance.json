@@ -1,7 +1,7 @@
 {
   "official_sdk_source": "/home/olorin/下载/SDK_V3.0(1).0/SDK",
   "ik_source": "/home/olorin/Olorin/01_Elite/fairino_ik",
-  "ik_commit": "f5e50c8daa8128277d77873a041f8e55a2b92544",
+  "ik_commit": "09a5674cc7353f005bf090fdeb54069952b954b7",
   "files": [
     {
       "path": "third_party/official_sdk/include/data_define.h",
@@ -60,7 +60,7 @@
     },
     {
       "path": "third_party/fairino_ik/README.md",
-      "sha256": "cdee362f10337c23480c0c3eda903758b70979e549dc34180616ecf0171f3e51",
+      "sha256": "c6c75b02ea8cfee44ed4b9040525f0703916bab12bfa5cd58f664264bdb87b7e",
       "source": "/home/olorin/Olorin/01_Elite/fairino_ik/README.md"
     },
     {
@@ -70,7 +70,7 @@
     },
     {
       "path": "third_party/fairino_ik/cpp/include/fairino_ik/solver.hpp",
-      "sha256": "ecef1625491f42418f0088aa5d3ddcfb14b6adf580dd683b99dbb988673b5841",
+      "sha256": "52a1529e4ebf106915711d0fb19ef7b7b5877b81ad036c7c644424036087f7e5",
       "source": "/home/olorin/Olorin/01_Elite/fairino_ik/cpp/include/fairino_ik/solver.hpp"
     },
     {
@@ -80,17 +80,17 @@
     },
     {
       "path": "third_party/fairino_ik/cpp/src/solver.cpp",
-      "sha256": "f4f6e1f1235cf2962edd5ec351ce60d33ef822a52ea66a6513e0cf6c6eda72d0",
+      "sha256": "70a92ccd3a8c404bf315878a54410c468f77dc9d66aa098a0522ab52f2c2e11b",
       "source": "/home/olorin/Olorin/01_Elite/fairino_ik/cpp/src/solver.cpp"
     },
     {
       "path": "third_party/fairino_ik/environment.yml",
-      "sha256": "061c0846776dc60fbe42b3d4c6a034adb4fb77d35ec4387749abcff40aa7620a",
+      "sha256": "2bad7b9230a3c23058dd961077f23e9457f6b15fd670ab2276c7c48166d293f9",
       "source": "/home/olorin/Olorin/01_Elite/fairino_ik/environment.yml"
     },
     {
       "path": "third_party/fairino_ik/pyproject.toml",
-      "sha256": "2f830824f0edb6d86efb8d4dbf3ae6ded28020e375abefa1e41bb7a825eaf48b",
+      "sha256": "24539232f5a991973e8e1f359bd7a0cdb5ab89e54fb012ca86d03d4a31c42d54",
       "source": "/home/olorin/Olorin/01_Elite/fairino_ik/pyproject.toml"
     },
     {
@@ -252,7 +252,14 @@
       "path": "libpyfairino/assets/fairino/meshes/waist_Link.STL",
       "sha256": "25f696d2fe1405cabdceaacea731a51a239bd7cf45210c8fe3929f5d91f7508f",
       "source": "/home/olorin/Olorin/01_Elite/fairino_ik/src/fairino_ik/assets/fairino/meshes/waist_Link.STL"
+    },
+    {
+      "path": "third_party/fairino_ik/CMakeLists.txt",
+      "sha256": "b5e7231b63718888f356ffc82e2102ccd83d294c2f1593bcbf06371814b086f8",
+      "source": "/home/olorin/Olorin/01_Elite/fairino_ik/CMakeLists.txt"
     }
   ],
-  "notice": "Private official delivery, local use authorized; do not upload/publish. No SDK client LICENSE or fairino_ik LICENSE file was present; no license has been invented. Service package Apache metadata does not license the client."
+  "notice": "Private official delivery, local use authorized; do not upload/publish. No SDK client LICENSE or fairino_ik LICENSE file was present; no license has been invented. Service package Apache metadata does not license the client.",
+  "ik_branch": "feat/pinocchio-4.1.0",
+  "ik_worktree_modified": false
 }

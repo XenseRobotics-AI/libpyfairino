@@ -9,4 +9,4 @@ for entry in data['files']:
         assert hashlib.sha256(p.read_bytes()).hexdigest()==entry['sha256'],str(p)
 head=subprocess.check_output(['git','-C',data['ik_source'],'rev-parse','HEAD'],text=True).strip()
 assert head==data['ik_commit']
-print(json.dumps(dict(verified_files=len(data['files']),ik_commit=head,official_source=data['official_sdk_source']),indent=2))
+print(json.dumps(dict(verified_files=len(data['files']),ik_commit=head,ik_branch=data.get('ik_branch'),ik_worktree_modified=data.get('ik_worktree_modified',False),official_source=data['official_sdk_source']),indent=2))
